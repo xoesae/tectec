@@ -109,5 +109,6 @@ changelog:
 release:
   draft: true
   footer: |
-    **Install:** download `{{ .ProjectName }}-{{ .Version }}-linux-x86_64.tar.xz`, extract it and run `./install.sh`
-    (installs in `~/.local`, no root), or install the `.deb` / `.rpm`.
+    **Install / update:** `curl -fsSL https://raw.githubusercontent.com/xoesae/tectec/main/packaging/install.sh | bash`
+    (installs the latest release in `~/.local`, no root), or extract
+    `{{ .ProjectName }}-{{ .Version }}-linux-x86_64.tar.xz` and run `./install.sh --local`, or install the `.deb` / `.rpm`.
