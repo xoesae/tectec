@@ -119,7 +119,7 @@ impl App {
         let mut run: Option<Cmd> = None;
         egui::MenuBar::new().ui(ui, |ui| {
             for group in self.menu_groups() {
-                ui.menu_button(group.header, |ui| {
+                crate::menu::bar(ui, group.header, |ui| {
                     let mut recent = group.recent;
                     let mut entries = group.entries.into_iter().peekable();
                     while let Some(e) = entries.next() {
@@ -128,7 +128,7 @@ impl App {
                             if std::mem::take(&mut recent) {
                                 self.recent_menu(ui, &mut run);
                             }
-                            ui.separator();
+                            crate::menu::separator(ui);
                         }
                         match e.submenu {
                             Some(name) => {
@@ -136,7 +136,7 @@ impl App {
                                 while let Some(next) = entries.next_if(|n| n.submenu == Some(name) && !n.section) {
                                     items.push(next);
                                 }
-                                ui.menu_button(name, |ui| {
+                                crate::menu::submenu(ui, name, None, |ui| {
                                     for e in items {
                                         menu_item(ui, e, &mut run);
                                     }
@@ -168,18 +168,18 @@ impl App {
     }
 
     fn recent_menu(&self, ui: &mut egui::Ui, run: &mut Option<Cmd>) {
-        ui.menu_button(t("Recent projects"), |ui| {
+        crate::menu::submenu(ui, t("Recent projects"), None, |ui| {
             if self.s.recent.is_empty() {
-                ui.weak(t("None yet"));
+                crate::menu::label(ui, t("None yet"));
             }
             for r in &self.s.recent {
-                if ui.button(&r.name).on_hover_text(short_path(&r.path, 80)).clicked() {
+                if ui.add(crate::menu::item(&r.name)).on_hover_text(short_path(&r.path, 80)).clicked() {
                     *run = Some(Cmd::OpenRecent(r.path.clone()));
                 }
             }
             if !self.s.recent.is_empty() {
-                ui.separator();
-                if ui.button(t("Clear the list")).clicked() {
+                crate::menu::separator(ui);
+                if ui.add(crate::menu::item(t("Clear the list"))).clicked() {
                     *run = Some(Cmd::ClearRecent);
                 }
             }
@@ -350,8 +350,8 @@ impl App {
                         ui.label(RichText::new(format!("{} │ {src}", e.line)).monospace().small().weak());
                     }
                 });
-                r.context_menu(|ui| {
-                    if ui.button(t("Copy LaTeX's message")).clicked() {
+                crate::menu::context(&r, |ui| {
+                    if ui.add(crate::menu::item(t("Copy LaTeX's message"))).clicked() {
                         ui.ctx().copy_text(e.message.clone());
                         ui.close();
                     }
@@ -477,27 +477,33 @@ impl App {
             });
             ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                 ui.spacing_mut().item_spacing.x = 2.0;
-                egui::containers::menu::MenuButton::from_button(icons::icon_button(Icon::EllipsisVertical)).ui(ui, |ui| {
-                    ui.label(RichText::new(t("Position")).small().weak());
+                crate::menu::dropdown(ui, icons::icon_button(Icon::EllipsisVertical), |ui| {
+                    crate::menu::label(ui, t("Position"));
                     for (dock, label) in Dock::ALL {
-                        if crate::widgets::radio(ui, self.s.preview_dock == dock, t(label)).clicked() {
+                        if ui.add(crate::menu::item(t(label)).checked(self.s.preview_dock == dock)).clicked() {
                             self.s.preview_dock = dock;
                             ui.close();
                         }
                     }
-                    ui.separator();
-                    crate::widgets::checkbox(ui, &mut self.s.auto_compile, t("Compile automatically"));
+                    crate::menu::separator(ui);
+                    if ui.add(crate::menu::item(t("Compile automatically")).checked(self.s.auto_compile)).clicked() {
+                        self.s.auto_compile = !self.s.auto_compile;
+                    }
                     ui.add_enabled_ui(self.s.auto_compile, |ui| {
-                        ui.label(RichText::new(t("Wait after typing stops")).small().weak());
+                        crate::menu::label(ui, t("Wait after typing stops"));
                         for (secs, label) in [(0.5, t("0.5 s")), (1.0, "1 s"), (2.0, "2 s"), (5.0, "5 s")] {
-                            if crate::widgets::radio(ui, (self.s.compile_delay - secs).abs() < 0.01, label).clicked() {
+                            if ui.add(crate::menu::item(label).checked((self.s.compile_delay - secs).abs() < 0.01)).clicked() {
                                 self.s.compile_delay = secs;
                             }
                         }
                     });
-                    ui.separator();
-                    crate::widgets::checkbox(ui, &mut self.s.sync_follow, t("Follow the cursor in the PDF"));
-                    crate::widgets::checkbox(ui, &mut self.s.pdf_dark, t("Dark PDF"));
+                    crate::menu::separator(ui);
+                    if ui.add(crate::menu::item(t("Follow the cursor in the PDF")).checked(self.s.sync_follow)).clicked() {
+                        self.s.sync_follow = !self.s.sync_follow;
+                    }
+                    if ui.add(crate::menu::item(t("Dark PDF")).checked(self.s.pdf_dark)).clicked() {
+                        self.s.pdf_dark = !self.s.pdf_dark;
+                    }
                 })
                 .0
                 .on_hover_text(t("Preview options"));
@@ -674,50 +680,52 @@ impl App {
                     let clip = ui.clip_rect();
                     active_shown = clip.contains_rect(resp.rect.shrink(1.0)) || resp.rect.width() >= clip.width();
                 }
-                resp.context_menu(|ui| {
+                crate::menu::context(&resp, |ui| {
                     let textable = tab.kind.editable() || tab.kind == Kind::Svg;
-                    if ui.button(if tab.pinned { t("Unpin tab") } else { t("Pin tab") }).clicked() {
+                    if ui.add(crate::menu::item(if tab.pinned { t("Unpin tab") } else { t("Pin tab") })).clicked() {
                         menu_action = Some((i, "pin"));
                         ui.close();
                     }
                     if textable && !tab.kind.editable() {
-                        ui.menu_button(t("Reopen with"), |ui| {
-                            if crate::widgets::radio(ui, tab.view == TabView::Editor, t("Text editor")).clicked() {
+                        crate::menu::submenu(ui, t("Reopen with"), None, |ui| {
+                            if ui.add(crate::menu::item(t("Text editor")).checked(tab.view == TabView::Editor)).clicked() {
                                 menu_action = Some((i, "editor"));
                                 ui.close();
                             }
-                            if crate::widgets::radio(ui, tab.view == TabView::Viewer, t("Viewer")).clicked() {
+                            if ui.add(crate::menu::item(t("Viewer")).checked(tab.view == TabView::Viewer)).clicked() {
                                 menu_action = Some((i, "viewer"));
                                 ui.close();
                             }
                         });
                     }
-                    ui.separator();
+                    crate::menu::separator(ui);
                     for (label, action) in [
                         (t("Close"), "close"),
                         (t("Close others"), "close-others"),
                         (t("Close to the right"), "close-right"),
                         (t("Close all"), "close-all"),
                     ] {
-                        if ui.button(label).clicked() {
+                        let row = crate::menu::item(label);
+                        let row = if action == "close" { row.shortcut("Ctrl+W") } else { row };
+                        if ui.add(row).clicked() {
                             menu_action = Some((i, action));
                             ui.close();
                         }
                     }
-                    ui.separator();
-                    if ui.add_enabled(i > 0, egui::Button::new(t("Move left"))).clicked() {
+                    crate::menu::separator(ui);
+                    if ui.add_enabled(i > 0, crate::menu::item(t("Move left"))).clicked() {
                         menu_action = Some((i, "left"));
                         ui.close();
                     }
-                    if ui.add_enabled(i + 1 < app.tabs.len(), egui::Button::new(t("Move right"))).clicked() {
+                    if ui.add_enabled(i + 1 < app.tabs.len(), crate::menu::item(t("Move right"))).clicked() {
                         menu_action = Some((i, "right"));
                         ui.close();
                     }
-                    if project::is_document_source(&tab.path) && ui.button(t("Set as main file")).clicked() {
+                    if project::is_document_source(&tab.path) && ui.add(crate::menu::item(t("Set as main file"))).clicked() {
                         menu_action = Some((i, "main"));
                         ui.close();
                     }
-                    if tab.editable() && ui.button(t("Local history…")).clicked() {
+                    if tab.editable() && ui.add(crate::menu::item(t("Local history…"))).clicked() {
                         menu_action = Some((i, "history"));
                         ui.close();
                     }
@@ -773,15 +781,14 @@ impl App {
                     self.s.preview_hidden = !self.s.preview_hidden;
                 }
                 if overflow {
-                    egui::containers::menu::MenuButton::from_button(icons::icon_button(Icon::ChevronDown))
-                        .ui(ui, |ui| {
+                    crate::menu::dropdown(ui, icons::icon_button(Icon::ChevronDown), |ui| {
                             ui.set_max_width(360.0);
                             egui::ScrollArea::vertical().max_height(420.0).show(ui, |ui| {
                                 for (i, tab) in self.tabs.iter().enumerate() {
                                     let icon = if tab.pinned { Icon::Pin } else { super::sidebar::kind_icon(tab.kind) };
                                     let name = if tab.dirty { format!("{} ●", tab.name) } else { tab.name.clone() };
                                     let r = ui
-                                        .add(icons::selectable(Some(i) == self.active, icon, name))
+                                        .add(crate::menu::item(name).icon(icon).selected(Some(i) == self.active))
                                         .on_hover_text(project::relative(&tab.path, self.root.as_deref()));
                                     if r.clicked() {
                                         listed = Some(i);
@@ -898,9 +905,9 @@ impl App {
                         if ui.add(open).on_hover_text("Ctrl+O").clicked() {
                             run = Some(Cmd::OpenProject);
                         }
-                        ui.menu_button((Icon::Plus.tinted(ui.visuals().text_color()), t("New project")), |ui| {
+                        crate::menu::dropdown(ui, icons::button(Icon::Plus, t("New project")), |ui| {
                             for t in crate::backend::templates::Template::ALL {
-                                if ui.button(t.label()).clicked() {
+                                if ui.add(crate::menu::item(t.label())).clicked() {
                                     run = Some(Cmd::NewProject(t));
                                     ui.close();
                                 }
@@ -941,17 +948,17 @@ impl App {
                         if resp.clicked() && !removed {
                             run = Some(Cmd::OpenRecent(r.path.clone()));
                         }
-                        resp.context_menu(|ui| {
-                            if ui.button(t("Open")).clicked() {
+                        crate::menu::context(&resp, |ui| {
+                            if ui.add(crate::menu::item(t("Open"))).clicked() {
                                 run = Some(Cmd::OpenRecent(r.path.clone()));
                                 ui.close();
                             }
-                            if ui.button(t("Reveal in the file manager")).clicked() {
+                            if ui.add(crate::menu::item(t("Reveal in the file manager"))).clicked() {
                                 run = Some(Cmd::RevealRecent(r.path.clone()));
                                 ui.close();
                             }
-                            ui.separator();
-                            if ui.button(t("Remove from the recent projects")).clicked() {
+                            crate::menu::separator(ui);
+                            if ui.add(crate::menu::item(t("Remove from the recent projects"))).clicked() {
                                 run = Some(Cmd::ForgetRecent(r.path.clone()));
                                 ui.close();
                             }
@@ -1129,19 +1136,17 @@ impl App {
         ui.scope(|ui| {
             // Up to half the status bar; its messages and counts need the rest.
             ui.set_max_width((ui.available_width() * 0.5).min(720.0));
-            egui::containers::menu::MenuButton::from_button(button).ui(ui, |ui| {
+            crate::menu::dropdown(ui, button, |ui| {
                 ui.set_max_width(420.0);
                 egui::ScrollArea::vertical().max_height(420.0).show(ui, |ui| {
                     for (i, r) in rows.iter().enumerate() {
                         let e = &r.entry;
-                        ui.horizontal(|ui| {
-                            ui.add_space((e.level - min_level) as f32 * 14.0);
-                            let text = if e.level <= min_level { RichText::new(&e.title).strong() } else { RichText::new(&e.title) };
-                            if ui.selectable_label(here == Some(i), text).clicked() {
-                                go = Some((r.file.clone(), e.line));
-                                ui.close();
-                            }
-                        });
+                        let text = if e.level <= min_level { RichText::new(&e.title).strong() } else { RichText::new(&e.title) };
+                        let row = crate::menu::item(text).indent((e.level - min_level) as f32 * 14.0).selected(here == Some(i));
+                        if ui.add(row).clicked() {
+                            go = Some((r.file.clone(), e.line));
+                            ui.close();
+                        }
                     }
                 });
             });
@@ -1392,16 +1397,11 @@ mod tests {
 }
 
 fn menu_item(ui: &mut egui::Ui, e: MenuEntry, run: &mut Option<Cmd>) {
-    let clicked = match e.checked {
-        Some(mut c) => ui.add_enabled_ui(e.enabled, |ui| crate::widgets::checkbox(ui, &mut c, e.label.as_str())).inner.clicked(),
-        None => {
-            let mut b = egui::Button::new(&e.label);
-            if let Some(a) = e.accel {
-                b = b.shortcut_text(a);
-            }
-            ui.add_enabled(e.enabled, b).clicked()
-        }
-    };
+    let mut row = crate::menu::item(&e.label).checked(e.checked == Some(true));
+    if let Some(a) = e.accel {
+        row = row.shortcut(a);
+    }
+    let clicked = ui.add_enabled(e.enabled, row).clicked();
     if clicked {
         *run = Some(e.cmd);
         ui.close();

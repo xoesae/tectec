@@ -142,8 +142,8 @@ impl App {
                                 actions.push(TreeAction::Open(f.path.clone(), f.kind));
                             }
                         }
-                        r.context_menu(|ui| {
-                            if ui.button(t("Remove from favorites")).clicked() {
+                        crate::menu::context(&r, |ui| {
+                            if ui.add(crate::menu::item(t("Remove from favorites"))).clicked() {
                                 actions.push(TreeAction::Favorite(f.path.clone()));
                                 ui.close();
                             }
@@ -243,44 +243,44 @@ impl App {
     }
 
     fn node_menu(&self, r: &egui::Response, node: &Node, is_root: bool, actions: &mut Vec<TreeAction>) {
-        r.context_menu(|ui| {
+        crate::menu::context(&r, |ui| {
             let target_dir = if node.is_dir { node.path.clone() } else { node.path.parent().unwrap_or(&node.path).to_path_buf() };
             if !node.is_dir {
-                if ui.button(t("Open")).clicked() {
+                if ui.add(crate::menu::item(t("Open"))).clicked() {
                     actions.push(TreeAction::Open(node.path.clone(), node.kind));
                     ui.close();
                 }
-                if project::is_document_source(&node.path) && ui.button(t("Set as main file")).clicked() {
+                if project::is_document_source(&node.path) && ui.add(crate::menu::item(t("Set as main file"))).clicked() {
                     actions.push(TreeAction::SetMain(node.path.clone()));
                     ui.close();
                 }
-                ui.separator();
+                crate::menu::separator(ui);
             }
-            if ui.button(t("New file…")).clicked() {
+            if ui.add(crate::menu::item(t("New file…"))).clicked() {
                 actions.push(TreeAction::NewFile(target_dir.clone()));
                 ui.close();
             }
-            if ui.button(t("New folder…")).clicked() {
+            if ui.add(crate::menu::item(t("New folder…"))).clicked() {
                 actions.push(TreeAction::NewFolder(target_dir));
                 ui.close();
             }
-            ui.separator();
+            crate::menu::separator(ui);
             let fav = if self.s.is_favorite(&node.path) { t("Remove from favorites") } else { t("Add to favorites") };
-            if ui.add_enabled(!is_root, egui::Button::new(fav)).clicked() {
+            if ui.add_enabled(!is_root, crate::menu::item(fav)).clicked() {
                 actions.push(TreeAction::Favorite(node.path.clone()));
                 ui.close();
             }
-            ui.separator();
-            if ui.add_enabled(!is_root, egui::Button::new(t("Rename…"))).clicked() {
+            crate::menu::separator(ui);
+            if ui.add_enabled(!is_root, crate::menu::item(t("Rename…"))).clicked() {
                 actions.push(TreeAction::Rename(node.path.clone()));
                 ui.close();
             }
-            if ui.add_enabled(!is_root, egui::Button::new(RichText::new(t("Delete")).color(ui.visuals().error_fg_color))).clicked() {
+            if ui.add_enabled(!is_root, crate::menu::item(t("Delete")).danger()).clicked() {
                 actions.push(TreeAction::Delete(node.path.clone()));
                 ui.close();
             }
-            ui.separator();
-            if ui.button(t("Reveal in the file manager")).clicked() {
+            crate::menu::separator(ui);
+            if ui.add(crate::menu::item(t("Reveal in the file manager"))).clicked() {
                 actions.push(TreeAction::Reveal(node.path.clone()));
                 ui.close();
             }
@@ -357,10 +357,9 @@ impl App {
                 if ui.add(icons::icon_button(Icon::Plus)).on_hover_text(t("New reference…")).clicked() {
                     action = Some(RefAction::New);
                 }
-                let sort = egui::containers::menu::MenuButton::from_button(icons::icon_button(Icon::ArrowUpDown))
-                    .ui(ui, |ui| {
+                let sort = crate::menu::dropdown(ui, icons::icon_button(Icon::ArrowUpDown), |ui| {
                         for (sort, label) in RefSort::ALL {
-                            if ui.selectable_label(self.s.ref_sort == sort, t(label)).clicked() {
+                            if ui.add(crate::menu::item(t(label)).checked(self.s.ref_sort == sort)).clicked() {
                                 self.s.ref_sort = sort;
                                 ui.close();
                             }
@@ -506,34 +505,34 @@ impl App {
                         }
                     }
                 }
-                r.context_menu(|ui| {
-                    if ui.button(t("Cite at the cursor")).clicked() {
+                crate::menu::context(&r, |ui| {
+                    if ui.add(crate::menu::item(t("Cite at the cursor"))).clicked() {
                         action = Some(RefAction::Cite(e.key.clone()));
                         ui.close();
                     }
-                    if ui.button(t("Copy key")).clicked() {
+                    if ui.add(crate::menu::item(t("Copy key"))).clicked() {
                         ui.ctx().copy_text(e.key.clone());
                         ui.close();
                     }
-                    if ui.button(tf!("Show in {file}", file = project::file_name(&e.file))).clicked() {
+                    if ui.add(crate::menu::item(tf!("Show in {file}", file = project::file_name(&e.file)))).clicked() {
                         action = Some(RefAction::Show(e.file.clone(), e.key.clone()));
                         ui.close();
                     }
                     if reorder {
-                        ui.separator();
+                        crate::menu::separator(ui);
                         let same_file: Vec<&String> = refs.iter().filter(|o| o.file == e.file).map(|o| &o.key).collect();
                         let at = same_file.iter().position(|k| **k == e.key).unwrap_or(0);
-                        if ui.add_enabled(at > 0, egui::Button::new(t("Move up"))).clicked() {
+                        if ui.add_enabled(at > 0, crate::menu::item(t("Move up"))).clicked() {
                             action = Some(RefAction::Move(e.file.clone(), e.key.clone(), Some(same_file[at - 1].clone())));
                             ui.close();
                         }
-                        if ui.add_enabled(at + 1 < same_file.len(), egui::Button::new(t("Move down"))).clicked() {
+                        if ui.add_enabled(at + 1 < same_file.len(), crate::menu::item(t("Move down"))).clicked() {
                             action = Some(RefAction::Move(e.file.clone(), e.key.clone(), same_file.get(at + 2).map(|k| (*k).clone())));
                             ui.close();
                         }
                     }
-                    ui.separator();
-                    if ui.button(RichText::new(t("Remove…")).color(ui.visuals().error_fg_color)).clicked() {
+                    crate::menu::separator(ui);
+                    if ui.add(crate::menu::item(t("Remove…")).danger()).clicked() {
                         action = Some(RefAction::Remove(e.file.clone(), e.key.clone(), e.used));
                         ui.close();
                     }
@@ -617,16 +616,16 @@ impl App {
                     if r.clicked() {
                         open = Some((p.path.clone(), Kind::Pdf));
                     }
-                    r.context_menu(|ui| {
-                        if ui.button(t("Open")).clicked() {
+                    crate::menu::context(&r, |ui| {
+                        if ui.add(crate::menu::item(t("Open"))).clicked() {
                             open = Some((p.path.clone(), Kind::Pdf));
                             ui.close();
                         }
-                        if ui.button(t("Edit key and summary…")).clicked() {
+                        if ui.add(crate::menu::item(t("Edit key and summary…"))).clicked() {
                             meta = Some((p.name.clone(), p.path.clone(), p.cite_key.clone(), p.summary.clone()));
                             ui.close();
                         }
-                        if ui.button(RichText::new(t("Remove")).color(ui.visuals().error_fg_color)).clicked() {
+                        if ui.add(crate::menu::item(t("Remove")).danger()).clicked() {
                             remove = Some((p.name.clone(), p.path.clone()));
                             ui.close();
                         }
@@ -663,10 +662,9 @@ impl App {
                 if ui.add(icons::icon_button(Icon::Plus)).on_hover_text(tip).clicked() {
                     action = Some(ImageAction::Add);
                 }
-                let sort = egui::containers::menu::MenuButton::from_button(icons::icon_button(Icon::ArrowUpDown))
-                    .ui(ui, |ui| {
+                let sort = crate::menu::dropdown(ui, icons::icon_button(Icon::ArrowUpDown), |ui| {
                         for (sort, label) in ImageSort::ALL {
-                            if ui.selectable_label(self.s.image_sort == sort, t(label)).clicked() {
+                            if ui.add(crate::menu::item(t(label)).checked(self.s.image_sort == sort)).clicked() {
                                 self.s.image_sort = sort;
                                 ui.close();
                             }
@@ -779,31 +777,31 @@ impl App {
                 if r.clicked() && action.is_none() {
                     action = Some(ImageAction::Insert(img.rel_path.clone()));
                 }
-                r.context_menu(|ui| {
-                    if ui.button(t("Insert figure")).clicked() {
+                crate::menu::context(&r, |ui| {
+                    if ui.add(crate::menu::item(t("Insert figure"))).clicked() {
                         action = Some(ImageAction::Insert(img.rel_path.clone()));
                         ui.close();
                     }
-                    if ui.button(t("Open image")).clicked() {
+                    if ui.add(crate::menu::item(t("Open image"))).clicked() {
                         action = Some(ImageAction::Open(img.path.clone()));
                         ui.close();
                     }
-                    if ui.button(t("Reveal in the file manager")).clicked() {
+                    if ui.add(crate::menu::item(t("Reveal in the file manager"))).clicked() {
                         action = Some(ImageAction::Reveal(img.path.clone()));
                         ui.close();
                     }
                     if !img.uses.is_empty() {
-                        ui.separator();
-                        ui.label(RichText::new(t("Used in:")).small().weak());
+                        crate::menu::separator(ui);
+                        crate::menu::label(ui, t("Used in:"));
                         for u in &img.uses {
-                            if ui.button(format!("{}:{}", project::relative(&u.file, self.root.as_deref()), u.line)).clicked() {
+                            if ui.add(crate::menu::item(format!("{}:{}", project::relative(&u.file, self.root.as_deref()), u.line))).clicked() {
                                 action = Some(ImageAction::GoTo(u.file.clone(), u.line));
                                 ui.close();
                             }
                         }
                     }
-                    ui.separator();
-                    if ui.button(RichText::new(t("Delete…")).color(ui.visuals().error_fg_color)).clicked() {
+                    crate::menu::separator(ui);
+                    if ui.add(crate::menu::item(t("Delete…")).danger()).clicked() {
                         action = Some(ImageAction::Remove(img.path.clone(), img.uses.len()));
                         ui.close();
                     }

@@ -12,6 +12,7 @@ mod icons;
 mod inserts;
 mod kinetic;
 mod mathpreview;
+mod menu;
 mod pdfview;
 mod preferences;
 mod settings;

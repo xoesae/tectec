@@ -884,45 +884,45 @@ pub fn show(ui: &mut egui::Ui, text: &mut String, st: &mut TabEditor, mut env: E
                 h.2 = Some(area.response.rect);
             }
         }
-        response.context_menu(|ui| {
+        crate::menu::context(&response, |ui| {
             if let Some(issue) = &st.lint_menu {
                 ui.set_max_width(340.0);
-                ui.label(egui::RichText::new(issue.message()).small().color(ui.visuals().weak_text_color()));
+                crate::menu::label(ui, issue.message());
                 if let Some(label) = issue.fix_label() {
-                    if ui.add(icons::button(Icon::Check, label)).clicked() {
+                    if ui.add(crate::menu::item(label).icon(Icon::Check)).clicked() {
                         fix = Some(issue.clone());
                         ui.close();
                     }
                 }
-                ui.separator();
+                crate::menu::separator(ui);
             }
             if let Some(menu) = &st.spell_menu {
                 if menu.suggestions.is_empty() {
-                    ui.weak(t("No suggestions"));
+                    crate::menu::label(ui, t("No suggestions"));
                 }
                 for s in &menu.suggestions {
-                    if ui.button(s).clicked() {
+                    if ui.add(crate::menu::item(s)).clicked() {
                         replace_word = Some((menu.range, s.clone()));
                         ui.close();
                     }
                 }
-                if ui.button(tf!("Ignore \"{word}\"", word = menu.word)).clicked() {
+                if ui.add(crate::menu::item(tf!("Ignore \"{word}\"", word = menu.word))).clicked() {
                     ignore_word = Some(menu.word.clone());
                     ui.close();
                 }
-                ui.separator();
+                crate::menu::separator(ui);
             }
-            if ui.button(t("Copy")).clicked() {
+            if ui.add(crate::menu::item(t("Copy")).shortcut("Ctrl+C")).clicked() {
                 if let Some((a, b)) = st_selection(&ctx, st.id) {
                     ctx.copy_text(text.chars().skip(a).take(b - a).collect());
                 }
                 ui.close();
             }
-            if ui.button(t("Paste image from the clipboard")).clicked() {
+            if ui.add(crate::menu::item(t("Paste image from the clipboard")).shortcut("Ctrl+Alt+I")).clicked() {
                 resp.paste_image_at = Some(cursor_idx.unwrap_or(0));
                 ui.close();
             }
-            if ui.button(t("Find and replace…")).clicked() {
+            if ui.add(crate::menu::item(t("Find and replace…")).shortcut("Ctrl+F")).clicked() {
                 st.find.open = true;
                 st.find.focus_query = true;
                 ui.close();

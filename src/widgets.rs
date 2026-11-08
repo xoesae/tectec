@@ -84,11 +84,6 @@ pub fn checkbox(ui: &mut Ui, checked: &mut bool, text: impl Into<WidgetText>) ->
     response
 }
 
-/// A radio button, on when `selected`.
-pub fn radio(ui: &mut Ui, selected: bool, text: impl Into<WidgetText>) -> Response {
-    toggle(ui, selected, text.into(), true)
-}
-
 /// A slider with its rail filled in the accent up to the knob.
 pub fn slider(ui: &mut Ui, slider: egui::Slider<'_>) -> Response {
     ui.scope(|ui| {

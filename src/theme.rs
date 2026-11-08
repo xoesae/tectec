@@ -214,6 +214,12 @@ fn visuals(dark: bool, t: &Tones) -> Visuals {
     v
 }
 
+/// The fill under a menu entry the pointer is on: a neutral step off the
+/// popup's surface, not the accent.
+pub fn menu_hover(dark: bool) -> Color32 {
+    if dark { DARK.hover } else { LIGHT.hover }
+}
+
 /// The pointing hand over whatever can be clicked. egui shows it only over
 /// plain buttons; this covers checkboxes, radio buttons, sliders, combo
 /// boxes, collapsing headers, tabs and rows made clickable by hand. Called

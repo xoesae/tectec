@@ -1449,12 +1449,12 @@ impl TableBuilder {
                             self.focus = Some((r + 1, self.start_of(r + 1, c)));
                         }
                         let last = c + n >= self.cols;
-                        field.context_menu(|ui| {
-                            if ui.add_enabled(!last, egui::Button::new(t("Merge with the cell on the right"))).clicked() {
+                        crate::menu::context(&field, |ui| {
+                            if ui.add_enabled(!last, crate::menu::item(t("Merge with the cell on the right"))).clicked() {
                                 merge = Some((r, c));
                                 ui.close();
                             }
-                            if ui.add_enabled(n > 1, egui::Button::new(t("Split cells"))).clicked() {
+                            if ui.add_enabled(n > 1, crate::menu::item(t("Split cells"))).clicked() {
                                 split = Some((r, c));
                                 ui.close();
                             }

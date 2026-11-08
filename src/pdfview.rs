@@ -1059,18 +1059,18 @@ impl PdfView {
                         event = Some(e);
                     }
                 }
-                response.context_menu(|ui| {
-                    if ui.add_enabled(!self.selected_text.is_empty(), icons::button(Icon::Copy, t("Copy"))).clicked() {
+                crate::menu::context(&response, |ui| {
+                    if ui.add_enabled(!self.selected_text.is_empty(), crate::menu::item(t("Copy")).icon(Icon::Copy).shortcut("Ctrl+C")).clicked() {
                         ctx.copy_text(self.selected_text.clone());
                         ui.close();
                     }
-                    if ui.add_enabled(!self.selected_text.is_empty(), icons::button(Icon::Code, t("Select in the source"))).clicked() {
+                    if ui.add_enabled(!self.selected_text.is_empty(), crate::menu::item(t("Select in the source")).icon(Icon::Code)).clicked() {
                         if let Some(e) = self.selection_event() {
                             event = Some(e);
                         }
                         ui.close();
                     }
-                    if ui.button(t("Copy the page's text")).clicked() {
+                    if ui.add(crate::menu::item(t("Copy the page's text"))).clicked() {
                         if let Some(words) = self.page_words(page) {
                             let all: Vec<&Word> = words.iter().collect();
                             ctx.copy_text(words_text(&all, true));
