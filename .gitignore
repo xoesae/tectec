@@ -1,6 +1,5 @@
 /target
 
-# Saídas do LaTeX em projetos de teste
 *.aux
 *.log
 *.out
@@ -10,7 +9,6 @@
 *.fls
 *.fdb_latexmk
 
-# IDE e binário compilado solto na raiz
 .idea/
 /tectec
 /dist
