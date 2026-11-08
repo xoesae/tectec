@@ -20,6 +20,37 @@ use std::path::PathBuf;
 const ZEN_COLUMN_CHARS: f32 = 90.0;
 /// How long a compilation runs before the preview shows a spinner.
 const SPINNER_AFTER: f64 = 0.3;
+/// The editor pane's margin, sideways and at the top.
+const EDITOR_MARGIN: egui::Vec2 = egui::vec2(8.0, 2.0);
+/// How far below the tab strip's top the tabs start.
+const TAB_RISE: f32 = 5.0;
+/// Radius of the curves the active tab flares out with at its foot.
+const TAB_FLARE: f32 = 6.0;
+/// Radius of the tabs' top corners.
+const TAB_CORNER: f32 = 7.0;
+
+/// The outline of a folder tab over `rect`: rounded at the top, curving out
+/// by `TAB_FLARE` on both sides at the foot. Not convex, but it starts at the
+/// middle of its foot, from where it is all in sight, so epaint's fan fill
+/// (from the first point) draws it right.
+fn folder_tab(rect: egui::Rect) -> Vec<egui::Pos2> {
+    use std::f32::consts::{FRAC_PI_2, PI};
+    let arc = |out: &mut Vec<egui::Pos2>, c: egui::Pos2, r: f32, from: f32, to: f32| {
+        const STEPS: usize = 8;
+        for k in 0..=STEPS {
+            let a = from + (to - from) * k as f32 / STEPS as f32;
+            out.push(c + r * egui::vec2(a.cos(), a.sin()));
+        }
+    };
+    let (l, r, top, bottom) = (rect.left(), rect.right(), rect.top(), rect.bottom());
+    let (f, c) = (TAB_FLARE, TAB_CORNER);
+    let mut p = vec![egui::pos2(rect.center().x, bottom)];
+    arc(&mut p, egui::pos2(r + f, bottom - f), f, FRAC_PI_2, PI);
+    arc(&mut p, egui::pos2(r - c, top + c), c, 0.0, -FRAC_PI_2);
+    arc(&mut p, egui::pos2(l + c, top + c), c, -FRAC_PI_2, -PI);
+    arc(&mut p, egui::pos2(l - f, bottom - f), f, 0.0, FRAC_PI_2);
+    p
+}
 
 /// The toolbar shown over a `.tex` tab.
 enum Tool {
@@ -109,7 +140,7 @@ impl App {
         }
         // The same top and bottom margin as the side panels', so the tabs sit
         // level with the sidebar's and the preview's headers.
-        let frame = egui::Frame::central_panel(ui.style()).inner_margin(egui::Margin::symmetric(8, 2));
+        let frame = egui::Frame::central_panel(ui.style()).inner_margin(egui::Margin::symmetric(EDITOR_MARGIN.x as i8, EDITOR_MARGIN.y as i8));
         let editor = egui::CentralPanel::default().frame(frame).show(ui, |ui| self.editor_pane(ui)).response.rect;
         spots.editor = Some(editor).filter(|_| !self.zen);
         self.spots = spots;
@@ -632,42 +663,71 @@ impl App {
         // Tabs opened this frame widen the strip only next frame, so the
         // scroll to the active one is retried until it shows whole.
         let mut active_shown = true;
+        // Folder tabs: the active one rises from the strip with rounded top
+        // corners and curves out into the toolbar or editor under it, which
+        // share its colour; separators divide the others.
+        let panel = ui.visuals().panel_fill;
+        let dark = ui.visuals().dark_mode;
+        let strip_fill = panel.lerp_to_gamma(egui::Color32::BLACK, if dark { 0.35 } else { 0.06 });
+        let hover_fill = strip_fill.lerp_to_gamma(panel, 0.6);
+        let separator = ui.visuals().widgets.noninteractive.bg_stroke.color;
+        let tab_height = crate::widgets::BAR - TAB_RISE;
         let mut draw_tabs = |app: &mut App, ui: &mut egui::Ui| {
-            // The active tab's border glides to the tab picked; drawn after
-            // the tabs, relative to the first so scrolling does not drag it.
+            // Backgrounds and separators go under the names, painted once
+            // the tabs are laid out.
+            let backdrop = ui.painter().add(egui::Shape::Noop);
+            ui.spacing_mut().item_spacing.x = 0.0;
+            // Room for the active tab's curve when it is the first.
+            ui.add_space(TAB_FLARE);
             let mut first_tab: Option<egui::Rect> = None;
             let mut active_tab: Option<egui::Rect> = None;
+            // Each tab's rect and whether it is lit (active or hovered), for
+            // the separators: none next to a lit tab.
+            let mut placed: Vec<(egui::Rect, bool)> = Vec::new();
+            let mut shapes: Vec<egui::Shape> = Vec::new();
             for (i, tab) in app.tabs.iter().enumerate() {
                 let active = Some(i) == app.active;
                 // The unsaved mark fades in and out.
                 let dirty = ui.ctx().animate_bool_with_time(egui::Id::new(("tab-dirty", &tab.path)), tab.dirty, theme::MOTION);
-                let frame = egui::Frame::NONE
-                    .fill(if active { ui.visuals().extreme_bg_color } else { ui.visuals().faint_bg_color })
-                    .inner_margin(egui::Margin::symmetric(10, 2));
-                let r = frame.show(ui, |ui| {
-                    ui.horizontal(|ui| {
-                        let color = if active { ui.visuals().strong_text_color() } else { ui.visuals().text_color() };
-                        let mut atoms: Vec<egui::Atom<'_>> = Vec::new();
-                        if tab.pinned {
-                            atoms.push(Icon::Pin.tinted(color).into());
-                        }
-                        atoms.push(super::sidebar::kind_icon(tab.kind).tinted(color).into());
-                        atoms.push(RichText::new(&tab.name).color(color).into());
-                        if dirty > 0.0 {
-                            atoms.push(RichText::new(" ●").color(color.gamma_multiply(dirty)).into());
-                        }
-                        let l = ui.add(egui::AtomLayout::new(egui::Atoms::from(atoms)).sense(egui::Sense::click()));
-                        if !tab.pinned && ui.add(icons::icon_button(Icon::X).frame(false).min_size(egui::vec2(18.0, 18.0))).on_hover_text(t("Close (Ctrl+W)")).clicked() {
+                let builder = egui::UiBuilder::new()
+                    .id_salt(("tab", i))
+                    .layout(egui::Layout::left_to_right(egui::Align::Center))
+                    .sense(egui::Sense::click());
+                let r = ui.scope_builder(builder, |ui| {
+                    ui.set_min_height(tab_height);
+                    ui.spacing_mut().item_spacing.x = 4.0;
+                    ui.add_space(12.0);
+                    let color = if active { ui.visuals().strong_text_color() } else { ui.visuals().weak_text_color() };
+                    let mut atoms: Vec<egui::Atom<'_>> = Vec::new();
+                    if tab.pinned {
+                        atoms.push(Icon::Pin.tinted(color).into());
+                    }
+                    atoms.push(super::sidebar::kind_icon(tab.kind).tinted(color).into());
+                    atoms.push(RichText::new(&tab.name).color(color).into());
+                    if dirty > 0.0 {
+                        atoms.push(RichText::new(" ●").color(color.gamma_multiply(dirty)).into());
+                    }
+                    let l = ui.add(egui::AtomLayout::new(egui::Atoms::from(atoms)).sense(egui::Sense::click()));
+                    if tab.pinned {
+                        ui.add_space(12.0);
+                    } else {
+                        if ui.add(icons::icon_button(Icon::X).frame(false).min_size(egui::vec2(18.0, 18.0))).on_hover_text(t("Close (Ctrl+W)")).clicked() {
                             close = Some(i);
                         }
-                        l
-                    })
-                    .inner
+                        ui.add_space(6.0);
+                    }
+                    l
                 });
-                first_tab.get_or_insert(r.response.rect);
+                let rect = r.response.rect;
+                let hovered = r.response.contains_pointer();
+                first_tab.get_or_insert(rect);
                 if active {
-                    active_tab = Some(r.response.rect);
+                    active_tab = Some(rect);
+                } else if hovered {
+                    let pill = egui::Rect::from_min_max(rect.min + egui::vec2(3.0, 0.0), rect.max - egui::vec2(3.0, 4.0));
+                    shapes.push(egui::Shape::rect_filled(pill, 6.0, hover_fill));
                 }
+                placed.push((rect, active || hovered));
                 let resp = r.inner.union(r.response).on_hover_text(project::relative(&tab.path, app.root.as_deref()));
                 if resp.clicked() {
                     activate = Some(i);
@@ -731,14 +791,24 @@ impl App {
                     }
                 });
             }
+            for pair in placed.windows(2) {
+                let ((a, a_lit), (_, b_lit)) = (pair[0], pair[1]);
+                if !a_lit && !b_lit {
+                    let x = a.right();
+                    let y = a.center().y - 2.0;
+                    shapes.push(egui::Shape::line_segment([egui::pos2(x, y - 7.0), egui::pos2(x, y + 7.0)], egui::Stroke::new(1.0, separator)));
+                }
+            }
+            // The active tab glides to the tab picked, relative to the first
+            // so scrolling does not drag it.
             if let (Some(first), Some(rect)) = (first_tab, active_tab) {
                 let ctx = ui.ctx().clone();
-                let glide = |what: &str, to: f32| ctx.animate_value_with_time(egui::Id::new(("tab-border", what)), to, theme::MOTION);
-                let min = first.min + egui::vec2(glide("x", rect.left() - first.left()), glide("y", rect.top() - first.top()));
-                let size = egui::vec2(glide("w", rect.width()), glide("h", rect.height()));
-                let stroke = egui::Stroke::new(1.0, ui.visuals().selection.bg_fill);
-                ui.painter().rect_stroke(egui::Rect::from_min_size(min, size), 0.0, stroke, egui::StrokeKind::Inside);
+                let glide = |what: &str, to: f32| ctx.animate_value_with_time(egui::Id::new(("tab-folder", what)), to, theme::MOTION);
+                let left = first.left() + glide("x", rect.left() - first.left());
+                let r = egui::Rect::from_x_y_ranges(left..=left + glide("w", rect.width()), rect.y_range());
+                shapes.push(egui::Shape::convex_polygon(folder_tab(r), panel, egui::Stroke::NONE));
             }
+            ui.painter().set(backdrop, egui::Shape::Vec(shapes));
         };
         let mut listed = None;
         let row = |ui: &mut egui::Ui| {
@@ -747,8 +817,17 @@ impl App {
             let overflow_id = egui::Id::new("tab-overflow");
             let had = ui.data(|d| d.get_temp::<bool>(overflow_id)).unwrap_or(false);
             let w = ui.available_width() - if had { 100.0 } else { 70.0 };
+            // The strip reaches the panel's edges, over its margin
+            // (`EDITOR_MARGIN`), so only the active tab shows the panel.
+            let strip = ui.max_rect();
+            let back = egui::Rect::from_min_max(
+                strip.min - egui::vec2(EDITOR_MARGIN.x, EDITOR_MARGIN.y),
+                egui::pos2(strip.right() + EDITOR_MARGIN.x, strip.bottom()),
+            );
+            ui.painter().with_clip_rect(back).rect_filled(back, 0.0, strip_fill);
+            let area = egui::Rect::from_min_max(egui::pos2(strip.left(), strip.bottom() - tab_height), egui::pos2(strip.left() + w.max(50.0), strip.bottom()));
             let out = ui
-                .scope(|ui| {
+                .scope_builder(egui::UiBuilder::new().max_rect(area), |ui| {
                     // A plain mouse wheel scrolls the tabs sideways.
                     ui.style_mut().always_scroll_the_only_direction = true;
                     // The bar gets a strip of its own under the tabs, there
@@ -758,7 +837,7 @@ impl App {
                     scroll.floating = true;
                     scroll.bar_width = 3.0;
                     scroll.floating_width = 3.0;
-                    scroll.floating_allocated_width = 6.0;
+                    scroll.floating_allocated_width = 0.0;
                     scroll.bar_outer_margin = 0.0;
                     scroll.foreground_color = false;
                     scroll.dormant_background_opacity = 0.0;
