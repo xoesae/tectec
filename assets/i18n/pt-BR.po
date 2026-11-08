@@ -1,0 +1,4168 @@
+# Portuguese (Brazil) translation of TecTec.
+# English is the source language; see src/i18n.rs.
+msgid ""
+msgstr ""
+"Project-Id-Version: tectec\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: prioridade 1
+msgid "ABNT academic work (abnTeX2)"
+msgstr "Trabalho acadêmico ABNT (abnTeX2)"
+
+#: prioridade 1
+msgid "Bold"
+msgstr "Negrito"
+
+#: prioridade 1
+msgid "Bold: \\textbf{} (Ctrl+B)"
+msgstr "Negrito: \\textbf{} (Ctrl+B)"
+
+#: prioridade 1
+msgid "Citation “{key}” is undefined"
+msgstr "Citação “{key}” indefinida"
+
+#: prioridade 1
+msgid "Emphasis (italic)"
+msgstr "Ênfase (itálico)"
+
+#: prioridade 1
+msgid "Emphasis (italic): \\emph{} (Ctrl+I)"
+msgstr "Ênfase (itálico): \\emph{} (Ctrl+I)"
+
+#: prioridade 1
+msgid "Insert {command}"
+msgstr "Inserir {command}"
+
+#: prioridade 1
+msgid "Label “{label}” is defined more than once"
+msgstr "Rótulo “{label}” definido mais de uma vez"
+
+#: prioridade 1
+msgid "Line sticks out of the margin by {size}"
+msgstr "Linha passa da margem em {size}"
+
+#: prioridade 1
+msgid "Loose line: too much space between words"
+msgstr "Linha frouxa: espaço demais entre as palavras"
+
+#: prioridade 1
+msgid "Math symbol outside $…$"
+msgstr "Símbolo de matemática fora de $…$"
+
+#: prioridade 1
+msgid "Missing file: {file}"
+msgstr "Arquivo faltando: {file}"
+
+#: prioridade 1
+msgid "Reference “{label}” is undefined"
+msgstr "Referência “{label}” indefinida"
+
+#: prioridade 1
+msgid "Some references are undefined"
+msgstr "Há referências indefinidas"
+
+#: prioridade 1
+msgid "The document cites sources but prints no bibliography, so every citation shows “?”."
+msgstr "O documento cita fontes mas não imprime a bibliografia, então toda citação sai como “?”."
+
+#: prioridade 1
+msgid "The document prints no bibliography, so no citation resolves: in the main file, Ctrl+. on \\end{document} inserts it."
+msgstr "O documento não imprime a bibliografia, então nenhuma citação se resolve: no arquivo principal, Ctrl+. sobre \\end{document} a insere."
+
+#: prioridade 1
+msgid "To install {file}:"
+msgstr "Para instalar {file}:"
+
+#: prioridade 1
+msgid "Unknown command"
+msgstr "Comando desconhecido"
+
+#: prioridade 1
+msgid "Unknown environment “{name}”"
+msgstr "Ambiente “{name}” desconhecido"
+
+#: prioridade 1
+msgid "{words} in the document"
+msgstr "{words} no documento"
+
+#: prioridade 1
+msgid "{words} words in the document"
+msgstr "{words} palavras no documento"
+
+#: src/app
+msgid "Drag the project folder (or a .tex) here to open it."
+msgstr "Arraste a pasta do projeto (ou um .tex) para abrir."
+
+#: src/app
+msgid "Set a main .tex file to make the preview."
+msgstr "Defina um arquivo .tex principal para gerar o preview."
+
+#: src/app
+msgid "The outline is shown for .tex files."
+msgstr "A estrutura aparece para arquivos .tex."
+
+#: src/app
+msgid "Write LaTeX with a live preview."
+msgstr "Escreva LaTeX com preview em tempo real."
+
+#: src/app/actions.rs
+msgid "Absolute path of the LaTeX project folder."
+msgstr "Caminho absoluto da pasta do projeto LaTeX."
+
+#: src/app/actions.rs
+msgid "An optional label for the file name (e.g. advisor's review)."
+msgstr "Um rótulo opcional para o nome do arquivo (ex.: revisão do orientador)."
+
+#: src/app/actions.rs
+msgid "Attach papers (PDF)…"
+msgstr "Anexar artigos (PDF)…"
+
+#: src/app/actions.rs
+msgid "Bigger editor font"
+msgstr "Aumentar fonte do editor"
+
+#: src/app/actions.rs
+msgid "Choose one or more PDFs to attach as papers"
+msgstr "Escolha um ou mais PDFs para anexar como artigos"
+
+#: src/app/actions.rs
+msgid "Choose the LaTeX project folder"
+msgstr "Escolha a pasta do projeto LaTeX"
+
+#: src/app/actions.rs
+msgid "Close \\begin{…} with \\end, continue \\item"
+msgstr "Fechar \\begin{…} com \\end, continuar \\item"
+
+#: src/app/actions.rs
+msgid "Close all tabs"
+msgstr "Fechar todas as abas"
+
+#: src/app/actions.rs
+msgid "Close pairs and wrap the selection"
+msgstr "Fechar pares e envolver a seleção"
+
+#: src/app/actions.rs
+msgid "Close tab"
+msgstr "Fechar aba"
+
+#: src/app/actions.rs
+msgid "Command palette…"
+msgstr "Paleta de comandos…"
+
+#: src/app/actions.rs
+msgid "Comment/uncomment lines"
+msgstr "Comentar/descomentar linhas"
+
+#: src/app/actions.rs src/app/view.rs
+msgid "Compile automatically"
+msgstr "Compilar automaticamente"
+
+#: src/app/actions.rs
+msgid "Could not add the image: {e}"
+msgstr "Não foi possível adicionar a imagem: {e}"
+
+#: src/app/actions.rs
+msgid "Could not add the reference: {e}"
+msgstr "Não foi possível adicionar a referência: {e}"
+
+#: src/app/actions.rs
+msgid "Could not attach the PDF: {e}"
+msgstr "Não foi possível anexar o PDF: {e}"
+
+#: src/app/actions.rs
+msgid "Could not create the note: {e}"
+msgstr "Não foi possível criar a nota: {e}"
+
+#: src/app/actions.rs
+msgid "Could not make the version: {e}"
+msgstr "Não foi possível gerar a versão: {e}"
+
+#: src/app/actions.rs
+msgid "Could not open the file manager: {e}"
+msgstr "Não foi possível abrir o gerenciador de arquivos: {e}"
+
+#: src/app/actions.rs src/app/mod.rs
+msgid "Could not open the project: {e}"
+msgstr "Não foi possível abrir o projeto: {e}"
+
+#: src/app/actions.rs
+msgid "Could not paste the image: {e}"
+msgstr "Não foi possível colar a imagem: {e}"
+
+#: src/app/actions.rs src/app/mod.rs
+msgid "Could not read {name}: {e}"
+msgstr "Não foi possível ler {name}: {e}"
+
+#: src/app/actions.rs
+msgid "Create"
+msgstr "Criar"
+
+#: src/app/actions.rs
+msgid "Created the folder {name}."
+msgstr "Criada a pasta {name}."
+
+#: src/app/actions.rs
+msgid "Created {name}."
+msgstr "Criado {name}."
+
+#: src/app/actions.rs
+msgid "Ctrl+Space"
+msgstr "Ctrl+Espaço"
+
+#: src/app/actions.rs src/app/view.rs
+msgid "Dark PDF"
+msgstr "PDF em modo escuro"
+
+#: src/app/actions.rs
+msgid "Dark theme"
+msgstr "Tema escuro"
+
+#: src/app/actions.rs src/app/sidebar.rs src/dialogs.rs
+msgid "Delete"
+msgstr "Excluir"
+
+#: src/app/actions.rs
+msgid "Delete {name}?"
+msgstr "Excluir {name}?"
+
+#: src/app/actions.rs
+msgid "Document"
+msgstr "Documento"
+
+#: src/app/actions.rs
+msgid "Duplicate lines"
+msgstr "Duplicar linhas"
+
+#: src/app/actions.rs src/dialogs.rs
+msgid "Edit"
+msgstr "Editar"
+
+#: src/app/actions.rs
+msgid "Editor"
+msgstr "Editor"
+
+#: src/app/actions.rs
+msgid "F12 / Ctrl+click"
+msgstr "F12 / Ctrl+clique"
+
+#: src/app/actions.rs
+msgid "Figure inserted: {path}."
+msgstr "Figura inserida: {path}."
+
+#: src/app/actions.rs
+msgid "File"
+msgstr "Arquivo"
+
+#: src/app/actions.rs
+msgid "Find and replace in the project…"
+msgstr "Buscar e substituir no projeto…"
+
+#: src/app/actions.rs src/editor/mod.rs
+msgid "Find and replace…"
+msgstr "Buscar e substituir…"
+
+#: src/app/actions.rs
+msgid "Folder for the new project ({template})"
+msgstr "Pasta do novo projeto ({template})"
+
+#: src/app/actions.rs src/app/view.rs
+msgid "Follow the cursor in the PDF"
+msgstr "Acompanhar o cursor no PDF"
+
+#: src/app/actions.rs
+msgid "Go to"
+msgstr "Ir para"
+
+#: src/app/actions.rs
+msgid "Go to file…"
+msgstr "Ir para arquivo…"
+
+#: src/app/actions.rs
+msgid "Go to the definition (\\ref, \\cite, \\input, project macro)"
+msgstr "Ir para a definição (\\ref, \\cite, \\input, macro do projeto)"
+
+#: src/app/actions.rs
+msgid "Help"
+msgstr "Ajuda"
+
+#: src/app/actions.rs
+msgid "Hide preview"
+msgstr "Ocultar preview"
+
+#: src/app/actions.rs
+msgid "Hide sidebar"
+msgstr "Ocultar barra lateral"
+
+#: src/app/actions.rs
+msgid "Image added to the project: {path}."
+msgstr "Imagem adicionada ao projeto: {path}."
+
+#: src/app/actions.rs
+msgid "Image pasted: {name}."
+msgstr "Imagem colada: {name}."
+
+#: src/app/actions.rs
+msgid "Indent / unindent"
+msgstr "Indentar / desindentar"
+
+#: src/app/actions.rs
+msgid "Insert table…"
+msgstr "Inserir tabela…"
+
+#: src/app/actions.rs
+msgid "Keyboard shortcuts…"
+msgstr "Atalhos do teclado…"
+
+#: src/app/actions.rs
+msgid "Language"
+msgstr "Idioma"
+
+#: src/app/actions.rs
+msgid "Leave zen mode, close a dialog or menu"
+msgstr "Sair do modo zen, fechar diálogo ou menu"
+
+#: src/app/actions.rs
+msgid "Light theme"
+msgstr "Tema claro"
+
+#: src/app/actions.rs
+msgid "Local history of the file…"
+msgstr "Histórico local do arquivo…"
+
+#: src/app/actions.rs
+msgid "Looking up the reference…"
+msgstr "Buscando referência…"
+
+#: src/app/actions.rs
+msgid "Manage snippets…"
+msgstr "Gerenciar snippets…"
+
+#: src/app/actions.rs
+msgid "Move lines up/down"
+msgstr "Mover linhas para cima/baixo"
+
+#: src/app/actions.rs
+msgid "Navigation"
+msgstr "Navegação"
+
+#: src/app/actions.rs src/app/view.rs
+msgid "New file"
+msgstr "Novo arquivo"
+
+#: src/app/actions.rs src/app/sidebar.rs
+msgid "New file…"
+msgstr "Novo arquivo…"
+
+#: src/app/actions.rs
+msgid "New folder"
+msgstr "Nova pasta"
+
+#: src/app/actions.rs src/app/sidebar.rs
+msgid "New folder…"
+msgstr "Nova pasta…"
+
+#: src/app/actions.rs
+msgid "New note"
+msgstr "Nova nota"
+
+#: src/app/actions.rs src/app/sidebar.rs
+msgid "New note…"
+msgstr "Nova nota…"
+
+#: src/app/actions.rs
+msgid "Next / previous compilation error"
+msgstr "Próximo / anterior erro da compilação"
+
+#: src/app/actions.rs
+msgid "Next error"
+msgstr "Próximo erro"
+
+#: src/app/actions.rs
+msgid "Next tab"
+msgstr "Próxima aba"
+
+#: src/app/actions.rs
+msgid "Go back"
+msgstr "Voltar"
+
+#: src/app/actions.rs
+msgid "Go forward"
+msgstr "Avançar"
+
+#: src/app/navigate.rs
+msgid "Nothing to go back to."
+msgstr "Não há para onde voltar."
+
+#: src/app/navigate.rs
+msgid "Nothing to go forward to."
+msgstr "Não há para onde avançar."
+
+#: src/app/actions.rs
+msgid "No error with a line in the last compilation."
+msgstr "Nenhum erro com linha na última compilação."
+
+#: src/app/actions.rs src/app/sidebar.rs
+msgid "Open"
+msgstr "Abrir"
+
+#: src/app/actions.rs
+msgid "Open a .tex file to insert the citation."
+msgstr "Abra um arquivo .tex para inserir a citação."
+
+#: src/app/actions.rs
+msgid "Open a .tex file to insert the figure."
+msgstr "Abra um arquivo .tex para inserir a figura."
+
+#: src/app/actions.rs
+msgid "Open project by path"
+msgstr "Abrir projeto pelo caminho"
+
+#: src/app/actions.rs
+msgid "Open project by path…"
+msgstr "Abrir projeto pelo caminho…"
+
+#: src/app/actions.rs src/app/sidebar.rs src/app/view.rs
+msgid "Open project…"
+msgstr "Abrir projeto…"
+
+#: src/app/actions.rs
+msgid "Open the autocomplete"
+msgstr "Abrir o autocomplete"
+
+#: src/app/actions.rs
+msgid "Paper attached: {name}."
+msgstr "Artigo anexado: {name}."
+
+#: src/app/actions.rs src/editor/mod.rs
+msgid "Paste image from the clipboard"
+msgstr "Colar imagem da área de transferência"
+
+#: src/app/actions.rs
+msgid "Previous error"
+msgstr "Erro anterior"
+
+#: src/app/actions.rs
+msgid "Previous tab"
+msgstr "Aba anterior"
+
+#: src/app/actions.rs
+msgid "Previous/next page in the PDF"
+msgstr "Página anterior/próxima no PDF"
+
+#: src/app/actions.rs src/app/mod.rs
+msgid "Project opened."
+msgstr "Projeto aberto."
+
+#: src/app/actions.rs src/app/view.rs
+msgid "Recent projects"
+msgstr "Projetos recentes"
+
+#: src/app/actions.rs
+msgid "Reference added: {key}."
+msgstr "Referência adicionada: {key}."
+
+#: src/app/actions.rs src/app/sidebar.rs
+msgid "Remove"
+msgstr "Remover"
+
+#: src/app/actions.rs
+msgid "Remove {name}?"
+msgstr "Remover {name}?"
+
+#: src/app/actions.rs
+msgid "Rename"
+msgstr "Renomear"
+
+#: src/app/actions.rs
+msgid "Rename {name}"
+msgstr "Renomear {name}"
+
+#: src/app/actions.rs
+msgid "Renamed to {name}."
+msgstr "Renomeado para {name}."
+
+#: src/app/actions.rs src/dialogs.rs
+msgid "Save"
+msgstr "Salvar"
+
+#: src/app/actions.rs
+msgid "Save a PDF version"
+msgstr "Gerar versão em PDF"
+
+#: src/app/actions.rs src/tray.rs
+msgid "Save and compile"
+msgstr "Salvar e compilar"
+
+#: src/app/actions.rs src/app/sidebar.rs src/app/view.rs
+msgid "Set as main file"
+msgstr "Definir como principal"
+
+#: src/app/actions.rs
+msgid "Show preview"
+msgstr "Mostrar preview"
+
+#: src/app/actions.rs
+msgid "Show sidebar"
+msgstr "Mostrar barra lateral"
+
+#: src/app/actions.rs
+msgid "Show the cursor's position in the PDF"
+msgstr "Mostrar no PDF a posição do cursor"
+
+#: src/app/actions.rs
+msgid "Smaller editor font"
+msgstr "Diminuir fonte do editor"
+
+#: src/app/actions.rs
+msgid "Spell check"
+msgstr "Verificação ortográfica"
+
+#: src/app/actions.rs
+msgid "Sync: clicking the PDF goes to the line"
+msgstr "Sincronizar: clicar no PDF vai para a linha"
+
+#: src/app/actions.rs
+msgid "That folder no longer exists, so it was removed from the recent projects."
+msgstr "Essa pasta não existe mais e foi removida da lista de projetos recentes."
+
+#: src/app/actions.rs
+msgid "The PDF will be deleted from the disk. This cannot be undone."
+msgstr "O PDF será apagado do disco. Não dá para desfazer."
+
+#: src/app/actions.rs
+msgid "The clipboard holds no image."
+msgstr "A área de transferência não contém uma imagem."
+
+#: src/app/actions.rs
+msgid "The file will be deleted from the disk. This cannot be undone."
+msgstr "O arquivo será apagado do disco. Não dá para desfazer."
+
+#: src/app/actions.rs
+msgid "The folder and everything in it will be deleted from the disk. This cannot be undone."
+msgstr "A pasta e tudo o que está dentro dela serão apagados do disco. Não dá para desfazer."
+
+#: src/app/actions.rs
+msgid "The pasted image has an unexpected format."
+msgstr "Imagem colada em um formato inesperado."
+
+#: src/app/actions.rs
+msgid "Typewriter mode"
+msgstr "Modo typewriter"
+
+#: src/app/actions.rs
+msgid "Version saved in {path}."
+msgstr "Versão salva em {path}."
+
+#: src/app/actions.rs
+msgid "View"
+msgstr "Visualização"
+
+#: src/app/actions.rs
+msgid "Zen mode"
+msgstr "Modo zen"
+
+msgid "Read the PDF in zen mode"
+msgstr "Ler o PDF no modo zen"
+
+msgid "Back to the text"
+msgstr "Voltar ao texto"
+
+#: src/app/actions.rs
+msgid "Zen mode - Esc or Ctrl+Shift+B to leave."
+msgstr "Modo zen - Esc ou Ctrl+Shift+B para sair."
+
+#: src/app/actions.rs
+msgid "click"
+msgstr "clique"
+
+#: src/app/actions.rs
+msgid "in {n} file."
+msgid_plural "in {n} files."
+msgstr[0] "em {n} arquivo."
+msgstr[1] "em {n} arquivos."
+
+#: src/app/actions.rs
+msgid "new"
+msgstr "novo"
+
+#: src/app/actions.rs
+msgid "{name} deleted."
+msgstr "{name} excluído."
+
+#: src/app/actions.rs
+msgid "{name} is outside the project. Only images and PDFs are brought in."
+msgstr "{name} está fora do projeto. Só imagens e PDFs são trazidos para dentro."
+
+#: src/app/actions.rs
+msgid "{n} occurrence replaced"
+msgid_plural "{n} occurrences replaced"
+msgstr[0] "{n} ocorrência substituída"
+msgstr[1] "{n} ocorrências substituídas"
+
+#: src/app/actions.rs
+msgid "{n} paper attached."
+msgid_plural "{n} papers attached."
+msgstr[0] "{n} artigo anexado."
+msgstr[1] "{n} artigos anexados."
+
+#: src/app/actions.rs
+msgid "{n} skipped for unsaved changes or a conflict."
+msgid_plural "{n} skipped for unsaved changes or a conflict."
+msgstr[0] "{n} pulado por ter alterações não salvas ou conflito."
+msgstr[1] "{n} pulados por ter alterações não salvas ou conflito."
+
+#: src/app/mod.rs
+msgid "(nothing)"
+msgstr "(nada)"
+
+#: src/app/mod.rs
+msgid "Automatic compilation paused: {pdf_name} already exists and was not made by this app."
+msgstr "Compilação automática pausada: {pdf_name} já existe e não foi gerado por este app."
+
+#: src/app/mod.rs
+msgid "Compilation canceled so as not to overwrite the existing PDF."
+msgstr "Compilação cancelada para não sobrescrever o PDF existente."
+
+#: src/app/mod.rs
+msgid "Compilation error. See the details below."
+msgstr "Erro na compilação. Veja os detalhes abaixo."
+
+#: src/app/mod.rs
+msgid "Compile anyway"
+msgstr "Compilar mesmo assim"
+
+#: src/app/mod.rs
+msgid "Compiled at {time} with {engine}"
+msgstr "Compilado às {time} com {engine}"
+
+#: src/app/mod.rs src/app/view.rs
+msgid "Compiling…"
+msgstr "Compilando…"
+
+#: src/app/mod.rs
+msgid "Could not compile: {e}"
+msgstr "Não foi possível compilar: {e}"
+
+#: src/app/mod.rs
+msgid "Could not create the project: {e}"
+msgstr "Não foi possível criar o projeto: {e}"
+
+#: src/app/mod.rs
+msgid "Could not import the reference: {e}"
+msgstr "Não foi possível importar a referência: {e}"
+
+#: src/app/mod.rs
+msgid "Could not reload {name}: {e}"
+msgstr "Não foi possível recarregar {name}: {e}"
+
+#: src/app/mod.rs
+msgid "Could not remove the paper: {e}"
+msgstr "Não foi possível remover o artigo: {e}"
+
+#: src/app/mod.rs
+msgid "Could not save {name}: {e}"
+msgstr "Não foi possível salvar {name}: {e}"
+
+#: src/app/mod.rs
+msgid "Could not save: {e}"
+msgstr "Não foi possível salvar: {e}"
+
+#: src/app/mod.rs
+msgid "Drop a .tex to open its folder"
+msgstr "Solte um .tex para abrir a pasta dele"
+
+#: src/app/mod.rs
+msgid "Drop to add the image to the project and insert the figure"
+msgstr "Solte para adicionar a imagem ao projeto e inserir a figura"
+
+#: src/app/mod.rs
+msgid "Drop to open in the project"
+msgstr "Solte para abrir no projeto"
+
+#: src/app/mod.rs
+msgid "Drop to open the folder as a project"
+msgstr "Solte para abrir a pasta como projeto"
+
+#: src/app/mod.rs
+msgid "Editing…"
+msgstr "Editando…"
+
+#: src/app/mod.rs
+msgid "Keep my changes"
+msgstr "Manter minhas alterações"
+
+#: src/app/mod.rs src/app/sidebar.rs
+msgid "Loading…"
+msgstr "Carregando…"
+
+#: src/app/mod.rs
+msgid "Main file set: {name}"
+msgstr "Arquivo principal definido: {name}"
+
+#: src/app/mod.rs
+msgid "No LaTeX compiler found on the PATH. Install a LaTeX distribution (TeX Live, MacTeX or MiKTeX)."
+msgstr "Nenhum compilador LaTeX encontrado no PATH. Instale uma distribuição LaTeX (TeX Live, MacTeX ou MiKTeX)."
+
+#: src/app/mod.rs
+msgid "No SyncTeX map yet. Compile the document to sync."
+msgstr "Sem mapa SyncTeX ainda. Compile o documento para sincronizar."
+
+#: src/app/mod.rs
+msgid "No file open."
+msgstr "Nenhum arquivo aberto."
+
+#: src/app/mod.rs
+msgid "Open a project and compile to see the PDF here."
+msgstr "Abra um projeto e compile para ver o PDF aqui."
+
+#: src/app/mod.rs
+msgid "Overwrite"
+msgstr "Sobrescrever"
+
+#: src/app/mod.rs
+msgid "Overwrite the existing PDF?"
+msgstr "Sobrescrever PDF existente?"
+
+#: src/app/mod.rs
+msgid "Project created: {template}."
+msgstr "Projeto criado: {template}."
+
+#: src/app/mod.rs
+msgid "Project opened. No latexmk or bibtex: \\cite{} will not resolve."
+msgstr "Projeto aberto. Sem latexmk nem bibtex: \\cite{} não vai resolver."
+
+#: src/app/mod.rs
+msgid "Project resumed where you left off."
+msgstr "Projeto retomado de onde você parou."
+
+#: src/app/mod.rs
+msgid "Ready."
+msgstr "Pronto."
+
+#: src/app/mod.rs
+msgid "Reference imported: {key}."
+msgstr "Referência importada: {key}."
+
+#: src/app/mod.rs
+msgid "Reload from disk"
+msgstr "Recarregar do disco"
+
+#: src/app/mod.rs src/editor/mod.rs
+msgid "Replace"
+msgstr "Substituir"
+
+#: src/app/mod.rs
+msgid "Replace in the whole project?"
+msgstr "Substituir em todo o projeto?"
+
+#: src/app/mod.rs
+msgid "Saved at {time}"
+msgstr "Salvo às {time}"
+
+#: src/app/mod.rs
+msgid "Set a main file to make the preview."
+msgstr "Defina um arquivo principal para gerar o preview."
+
+#: src/app/mod.rs
+msgid "That passage is not exactly in the source, so the cursor went to the matching line."
+msgstr "Não achei esse trecho exatamente no código, então o cursor foi para a linha correspondente."
+
+#: src/app/mod.rs
+msgid "The automatic compilation found errors. See the marks in the editor."
+msgstr "A compilação automática encontrou erros. Veja as marcas no editor."
+
+#: src/app/mod.rs
+msgid "The compilation failed. See the errors."
+msgstr "A compilação falhou. Veja os erros."
+
+#: src/app/mod.rs
+msgid "The file was modified on disk since it was last read. Overwrite it with the text open here, or reload from disk and lose the unsaved changes?"
+msgstr "O arquivo foi modificado no disco desde a última leitura. Sobrescrever com o texto aberto aqui, ou recarregar do disco e perder as alterações não salvas?"
+
+#: src/app/mod.rs
+msgid "This replaces every occurrence of \"{query}\" with \"{replacement}\" in {n} file. This cannot be undone."
+msgid_plural "This replaces every occurrence of \"{query}\" with \"{replacement}\" in {n} files. This cannot be undone."
+msgstr[0] "Isso troca toda ocorrência de \"{query}\" por \"{replacement}\" em {n} arquivo. Não dá para desfazer."
+msgstr[1] "Isso troca toda ocorrência de \"{query}\" por \"{replacement}\" em {n} arquivos. Não dá para desfazer."
+
+#: src/app/mod.rs
+msgid "This tab has unsaved changes. Reloading discards what you edited here; keeping them keeps your changes, which will overwrite the disk the next time you save."
+msgstr "Há alterações não salvas nesta aba. Recarregar descarta o que você editou aqui; manter mantém suas alterações, que vão sobrescrever o disco na próxima vez que salvar."
+
+#: src/app/mod.rs
+msgid "Version restored. The previous text is in the local history."
+msgstr "Versão restaurada. O texto anterior ficou no histórico local."
+
+#: src/app/mod.rs
+msgid "folder not found: {path}"
+msgstr "pasta não encontrada: {path}"
+
+#: src/app/mod.rs
+msgid "{name} changed outside the editor"
+msgstr "{name} mudou fora do editor"
+
+#: src/app/mod.rs
+msgid "{n} pass"
+msgid_plural "{n} passes"
+msgstr[0] "{n} passada"
+msgstr[1] "{n} passadas"
+
+#: src/app/mod.rs
+msgid "{pdf_name} already exists in this folder and does not seem to have been made by this app. Compiling will overwrite it, and this cannot be undone."
+msgstr "Já existe {pdf_name} nesta pasta e ele não parece ter sido gerado por este app. Compilar vai sobrescrevê-lo, e não dá para desfazer."
+
+#: src/app/navigate.rs
+msgid "Ctrl+click to go"
+msgstr "Ctrl+clique para ir"
+
+#: src/app/navigate.rs
+msgid "Ctrl+click to open"
+msgstr "Ctrl+clique para abrir"
+
+#: src/app/navigate.rs
+msgid "Defined in the project"
+msgstr "Definido no projeto"
+
+#: src/app/navigate.rs
+msgid "File \"{name}\" not found."
+msgstr "Arquivo \"{name}\" não encontrado."
+
+#: src/app/navigate.rs
+msgid "Image \"{name}\" not found."
+msgstr "Imagem \"{name}\" não encontrada."
+
+#: src/app/navigate.rs
+msgid "Label \"{name}\" not found in the project."
+msgstr "Rótulo \"{name}\" não encontrado no projeto."
+
+#: src/app/navigate.rs
+msgid "Label \"{name}\" not found: the PDF will show \"??\"."
+msgstr "Rótulo \"{name}\" não encontrado: vai sair \"??\" no PDF."
+
+#: src/app/navigate.rs
+msgid "Reference \"{key}\" is in no .bib of the project."
+msgstr "Referência \"{key}\" não está em nenhum .bib do projeto."
+
+#: src/app/navigate.rs
+msgid "\"{key}\" is in no .bib of the project."
+msgstr "\"{key}\" não está em nenhum .bib do projeto."
+
+#: src/app/navigate.rs
+msgid "{desc} (package {package})"
+msgstr "{desc} (pacote {package})"
+
+#: src/app/navigate.rs
+msgid "{name} is not defined in the project."
+msgstr "{name} não é definido no projeto."
+
+#: src/app/navigate.rs
+msgid "{n} argument"
+msgid_plural "{n} arguments"
+msgstr[0] "{n} argumento"
+msgstr[1] "{n} argumentos"
+
+#: src/app/sidebar.rs
+msgid "Add to favorites"
+msgstr "Adicionar aos favoritos"
+
+#: src/app/sidebar.rs
+msgid "Attach PDFs…"
+msgstr "Anexar PDFs…"
+
+#: src/app/sidebar.rs
+msgid "Click to insert the figure at the cursor, or drag it into the text."
+msgstr "Clique para inserir a figura no cursor, ou arraste para o texto."
+
+#: src/app/sidebar.rs
+msgid "Copy key"
+msgstr "Copiar chave"
+
+#: src/app/sidebar.rs
+msgid "Edit key and summary…"
+msgstr "Editar chave e resumo…"
+
+#: src/app/sidebar.rs
+msgid "FAVORITES"
+msgstr "FAVORITOS"
+
+#: src/app/sidebar.rs
+msgid "Go to file… (Ctrl+Shift+N)"
+msgstr "Ir para arquivo… (Ctrl+Shift+N)"
+
+#: src/app/sidebar.rs
+msgid "Insert figure"
+msgstr "Inserir figura"
+
+#: src/app/sidebar.rs
+msgid "No file found."
+msgstr "Nenhum arquivo encontrado."
+
+#: src/app/sidebar.rs
+msgid "No project open."
+msgstr "Nenhum projeto aberto."
+
+#: src/app/sidebar.rs
+msgid "No section in this file."
+msgstr "Nenhuma seção neste arquivo."
+
+#: src/app/sidebar.rs src/settings.rs
+msgid "Notes"
+msgstr "Notas"
+
+#: src/app/sidebar.rs
+msgid "Nothing pending. Use % TODO: in the .tex or - [ ] in a note."
+msgstr "Nada pendente. Use % TODO: no .tex ou - [ ] numa nota."
+
+#: src/app/sidebar.rs
+msgid "Open image"
+msgstr "Abrir imagem"
+
+#: src/app/sidebar.rs src/app/view.rs
+msgid "Open {file}"
+msgstr "Abrir {file}"
+
+#: src/app/sidebar.rs
+msgid "Remove from favorites"
+msgstr "Remover dos favoritos"
+
+#: src/app/sidebar.rs
+msgid "Rename…"
+msgstr "Renomear…"
+
+#: src/app/sidebar.rs
+msgid "Reveal in the file manager"
+msgstr "Revelar no gerenciador"
+
+#: src/app/sidebar.rs
+msgid "Used in:"
+msgstr "Usada em:"
+
+#: src/app/sidebar.rs
+msgid "duplicate?"
+msgstr "duplicata?"
+
+#: src/app/sidebar.rs
+msgid "line {line}"
+msgstr "linha {line}"
+
+#: src/app/sidebar.rs
+msgid "no caption"
+msgstr "sem legenda"
+
+#: src/app/sidebar.rs
+msgid "no label"
+msgstr "sem rótulo"
+
+#: src/app/sidebar.rs
+msgid "{n} use"
+msgid_plural "{n} uses"
+msgstr[0] "{n} uso"
+msgstr[1] "{n} usos"
+
+#: src/app/view.rs
+msgid "0.5 s"
+msgstr "0,5 s"
+
+#: src/app/view.rs
+msgid "Automatic compilation is off"
+msgstr "Compilação automática desligada"
+
+#: src/app/view.rs
+msgid "Automatic compilation is off. Ctrl+S compiles"
+msgstr "Compilação automática desligada. Ctrl+S compila"
+
+#: src/app/view.rs
+msgid "Automatic compilation is on"
+msgstr "Compilação automática ligada"
+
+#: src/app/view.rs
+msgid "B"
+msgstr "N"
+
+
+#: src/app/view.rs src/dialogs.rs
+msgid "Close"
+msgstr "Fechar"
+
+#: src/app/view.rs
+msgid "Close (Ctrl+W)"
+msgstr "Fechar (Ctrl+W)"
+
+#: src/app/view.rs
+msgid "All open tabs"
+msgstr "Todas as abas abertas"
+
+#: src/app/view.rs
+msgid "Close all"
+msgstr "Fechar todas"
+
+#: src/app/view.rs
+msgid "Close others"
+msgstr "Fechar as outras"
+
+#: src/app/view.rs
+msgid "Close to the right"
+msgstr "Fechar à direita"
+
+#: src/app/view.rs
+msgid "Command palette"
+msgstr "Paleta de comandos"
+
+#: src/app/view.rs
+msgid "Compile now (Ctrl+S)"
+msgstr "Compilar agora (Ctrl+S)"
+
+#: src/app/view.rs
+msgid "Compiles as soon as you stop typing"
+msgstr "Compila assim que você parar de digitar"
+
+#: src/app/view.rs
+msgid "Find and replace (Ctrl+F)"
+msgstr "Buscar e substituir (Ctrl+F)"
+
+#: src/app/view.rs
+msgid "Follow the cursor: the PDF scrolls to the passage you are editing"
+msgstr "Acompanhar o cursor: o PDF rola até o trecho que você está editando"
+
+#: src/app/view.rs
+msgid "Go to file"
+msgstr "Ir para arquivo"
+
+#: src/app/view.rs
+msgid "Hide preview (Ctrl+J)"
+msgstr "Ocultar preview (Ctrl+J)"
+
+#: src/app/view.rs
+msgid "I"
+msgstr "I"
+
+#: src/app/view.rs
+msgid "Inline math"
+msgstr "Matemática em linha"
+
+#: src/app/view.rs
+msgid "LaTeX found: {engine}"
+msgstr "LaTeX encontrado: {engine}"
+
+#: src/app/view.rs
+msgid "Ln {line}, Col {col}"
+msgstr "Ln {line}, Col {col}"
+
+#: src/app/view.rs
+msgid "Local history…"
+msgstr "Histórico local…"
+
+#: src/app/view.rs
+msgid "Looking for LaTeX…"
+msgstr "Procurando o LaTeX…"
+
+#: src/app/view.rs
+msgid "Move left"
+msgstr "Mover para a esquerda"
+
+#: src/app/view.rs
+msgid "Move right"
+msgstr "Mover para a direita"
+
+#: src/app/view.rs
+msgid "New project"
+msgstr "Novo projeto"
+
+#: src/app/view.rs
+msgid "No LaTeX compiler on the PATH. Install TeX Live (Linux), MacTeX (macOS) or MiKTeX (Windows)."
+msgstr "Nenhum compilador LaTeX no PATH. Instale TeX Live (Linux), MacTeX (macOS) ou MiKTeX (Windows)."
+
+#: src/app/view.rs
+msgid "None yet"
+msgstr "Nenhum ainda"
+
+#: src/app/view.rs
+msgid "Paste image from the clipboard (Ctrl+Alt+I)"
+msgstr "Colar imagem da área de transferência (Ctrl+Alt+I)"
+
+#: src/app/view.rs
+msgid "Pin tab"
+msgstr "Fixar aba"
+
+#: src/app/view.rs
+msgid "Position"
+msgstr "Posição"
+
+#: src/app/view.rs
+msgid "Preview"
+msgstr "Preview"
+
+#: src/app/view.rs
+msgid "Preview options"
+msgstr "Opções do preview"
+
+#: src/app/view.rs
+msgid "Recent"
+msgstr "Recentes"
+
+#: src/app/view.rs
+msgid "Reopen with"
+msgstr "Reabrir com"
+
+#: src/app/view.rs
+msgid "Section: \\section{}"
+msgstr "Seção: \\section{}"
+
+#: src/app/view.rs
+msgid "Show errors"
+msgstr "Ver erros"
+
+#: src/app/view.rs
+msgid "Show preview (Ctrl+J)"
+msgstr "Mostrar preview (Ctrl+J)"
+
+#: src/app/view.rs
+msgid "Show/hide the diagnostics"
+msgstr "Mostrar/ocultar os diagnósticos"
+
+#: src/app/view.rs
+msgid "Table… (choose rows/columns)"
+msgstr "Tabela… (escolher linhas/colunas)"
+
+#: src/app/view.rs
+msgid "Text editor"
+msgstr "Editor de texto"
+
+#: src/app/view.rs
+msgid "Tip: Ctrl+Shift+P opens the palette with every command."
+msgstr "Dica: Ctrl+Shift+P abre a paleta com todos os comandos."
+
+#: src/app/view.rs
+msgid "U"
+msgstr "S"
+
+#: src/app/view.rs
+msgid "Underline: \\underline{}"
+msgstr "Sublinhado: \\underline{}"
+
+#: src/app/view.rs
+msgid "Unpin tab"
+msgstr "Desafixar aba"
+
+#: src/app/view.rs
+msgid "Viewer"
+msgstr "Visualizador"
+
+#: src/app/view.rs
+msgid "Wait after typing stops"
+msgstr "Esperar após parar de digitar"
+
+#: src/app/view.rs
+msgid "pending changes"
+msgstr "alterações pendentes"
+
+#: src/app/view.rs
+msgid "updated at {time}"
+msgstr "atualizado às {time}"
+
+#: src/app/view.rs
+msgid "{file} is a binary file and cannot be opened as text."
+msgstr "{file} é um arquivo binário e não pode ser aberto como texto."
+
+#: src/app/view.rs
+msgid "{n} character"
+msgid_plural "{n} characters"
+msgstr[0] "{n} caractere"
+msgstr[1] "{n} caracteres"
+
+#: src/app/view.rs
+msgid "{n} error"
+msgid_plural "{n} errors"
+msgstr[0] "{n} erro"
+msgstr[1] "{n} erros"
+
+#: src/app/view.rs
+msgid "{n} error. This is the last PDF that compiled."
+msgid_plural "{n} errors. This is the last PDF that compiled."
+msgstr[0] "{n} erro. Este é o último PDF que compilou."
+msgstr[1] "{n} erros. Este é o último PDF que compilou."
+
+#: src/app/view.rs
+msgid "{n} line"
+msgid_plural "{n} lines"
+msgstr[0] "{n} linha"
+msgstr[1] "{n} linhas"
+
+#: src/app/view.rs
+msgid "{n} selected"
+msgid_plural "{n} selected"
+msgstr[0] "{n} selecionado"
+msgstr[1] "{n} selecionados"
+
+#: src/app/view.rs
+msgid "{n} warning"
+msgid_plural "{n} warnings"
+msgstr[0] "{n} aviso"
+msgstr[1] "{n} avisos"
+
+#: src/app/view.rs
+msgid "{n} word"
+msgid_plural "{n} words"
+msgstr[0] "{n} palavra"
+msgstr[1] "{n} palavras"
+
+#: src/backend
+msgid "(untitled)"
+msgstr "(sem título)"
+
+#: src/backend
+msgid "Article"
+msgstr "Artigo"
+
+#: src/backend
+msgid "DOI \"{doi}\" not found"
+msgstr "DOI \"{doi}\" não encontrado"
+
+#: src/backend
+msgid "ISBN \"{isbn}\" not found"
+msgstr "ISBN \"{isbn}\" não encontrado"
+
+#: src/backend
+msgid "PDF without pages"
+msgstr "PDF sem páginas"
+
+#: src/backend
+msgid "Presentation (beamer)"
+msgstr "Apresentação (beamer)"
+
+#: src/backend
+msgid "References imported by tectec."
+msgstr "Referências importadas pelo tectec."
+
+#: src/backend
+msgid "Report or thesis (with chapters)"
+msgstr "Relatório ou tese (com capítulos)"
+
+#: src/backend
+msgid "Untitled note"
+msgstr "Nota sem título"
+
+#: src/backend
+msgid "a file named {name} already exists"
+msgstr "já existe um arquivo chamado {name}"
+
+#: src/backend
+msgid "arXiv \"{id}\" not found"
+msgstr "arXiv \"{id}\" não encontrado"
+
+#: src/backend
+msgid "compile the document before saving a version"
+msgstr "compile o documento antes de gerar uma versão"
+
+#: src/backend
+msgid "could not look up the DOI \"{doi}\": {e}"
+msgstr "não foi possível buscar o DOI \"{doi}\": {e}"
+
+#: src/backend
+msgid "could not look up the ISBN \"{isbn}\": {e}"
+msgstr "não foi possível buscar o ISBN \"{isbn}\": {e}"
+
+#: src/backend
+msgid "could not look up the arXiv \"{id}\": {e}"
+msgstr "não foi possível buscar o arXiv \"{id}\": {e}"
+
+#: src/backend
+msgid "could not read the PDF: {e}"
+msgstr "não foi possível ler o PDF: {e}"
+
+#: src/backend
+msgid "could not write {name}: {e}"
+msgstr "não foi possível gravar {name}: {e}"
+
+#: src/backend
+msgid "no project open"
+msgstr "nenhum projeto aberto"
+
+#: src/backend
+msgid "no such page"
+msgstr "página inexistente"
+
+#: src/backend
+msgid "not found"
+msgstr "não encontrado"
+
+#: src/backend
+msgid "paper not found: {name}"
+msgstr "artigo não encontrado: {name}"
+
+#: src/backend
+msgid "paste a DOI, ISBN or arXiv ID"
+msgstr "cole um DOI, ISBN ou arXiv ID"
+
+#: src/backend
+msgid "something named {name} already exists here"
+msgstr "já existe algo chamado {name} aqui"
+
+#: src/backend
+msgid "the name cannot be empty"
+msgstr "o nome não pode ficar vazio"
+
+#: src/backend
+msgid "the name cannot contain slashes"
+msgstr "o nome não pode conter barras"
+
+#: src/backend
+msgid "the project root cannot be deleted"
+msgstr "não dá para apagar a raiz do projeto"
+
+#: src/backend
+msgid "the project root cannot be renamed"
+msgstr "não dá para renomear a raiz do projeto"
+
+#: src/backend
+msgid "the title is required"
+msgstr "o título é obrigatório"
+
+#: src/backend
+msgid "this folder already has a {name}; choose an empty folder"
+msgstr "essa pasta já tem um {name}; escolha uma pasta vazia"
+
+#: src/backend
+msgid "unreadable PDF: {e}"
+msgstr "PDF ilegível: {e}"
+
+#: src/backend
+msgid "unrecognized identifier: paste a DOI, ISBN or arXiv ID"
+msgstr "identificador não reconhecido: cole um DOI, ISBN ou arXiv ID"
+
+#: src/backend
+msgid "{name} is a binary file and cannot be opened as text"
+msgstr "{name} é um arquivo binário e não pode ser aberto como texto"
+
+#: src/backend
+msgid "{name} is not a PDF"
+msgstr "{name} não é um PDF"
+
+#: src/backend
+msgid "{name} is not an image"
+msgstr "{name} não é uma imagem"
+
+#: src/backend/latex.rs
+msgid "& outside a table or align. For the symbol itself, write \\&."
+msgstr "& fora de uma tabela ou align. Para o símbolo em si, escreva \\&."
+
+#: src/backend/latex.rs
+msgid "A \\begin{…} was closed by the \\end of another environment: check the order of the \\end."
+msgstr "Um \\begin{…} foi fechado pelo \\end de outro ambiente: confira a ordem dos \\end."
+
+#: src/backend/latex.rs
+msgid "A citation key that is in no .bib of the project. Check the key."
+msgstr "Chave de citação que não está em nenhum .bib do projeto. Confira a chave."
+
+#: src/backend/latex.rs
+msgid "A length is missing its unit (pt, cm, em, \\linewidth…)."
+msgstr "Falta a unidade de uma medida (pt, cm, em, \\linewidth…)."
+
+#: src/backend/latex.rs
+msgid "A math symbol (_, ^, \\alpha…) appeared outside $…$. Wrap the expression in $…$, or write \\_ for a literal underscore."
+msgstr "Um símbolo de matemática (_, ^, \\alpha…) apareceu fora de $…$. Envolva a expressão em $…$, ou escreva \\_ para o sublinhado literal."
+
+#: src/backend/latex.rs
+msgid "An argument was not closed: a } is probably missing before the end of the paragraph."
+msgstr "Um argumento não foi fechado: provavelmente falta um } antes do fim do parágrafo."
+
+#: src/backend/latex.rs
+msgid "File not found: check the path, relative to the main file's folder."
+msgstr "Arquivo não encontrado: confira o caminho, relativo à pasta do arquivo principal."
+
+#: src/backend/latex.rs
+msgid "LaTeX stopped at the first serious error: fix the error listed before this one."
+msgstr "O LaTeX parou no primeiro erro grave: corrija o erro listado antes deste."
+
+#: src/backend/latex.rs
+msgid "Package not found: check its name, or install it in your LaTeX distribution (tlmgr install … / the MiKTeX console)."
+msgstr "Pacote não encontrado: confira o nome, ou instale-o na sua distribuição LaTeX (tlmgr install … / gerenciador do MiKTeX)."
+
+#: src/backend/latex.rs
+msgid "Some references or citations have no target; they show as \"??\" in the PDF."
+msgstr "Há referências ou citações sem destino; elas aparecem como \"??\" no PDF."
+
+#: src/backend/latex.rs
+msgid "There is text in the preamble: everything printed goes after \\begin{document}."
+msgstr "Há texto no preâmbulo: tudo que é impresso vai depois de \\begin{document}."
+
+#: src/backend/latex.rs
+msgid "This command can only go in the preamble, before \\begin{document}."
+msgstr "Este comando só pode ir no preâmbulo, antes de \\begin{document}."
+
+#: src/backend/latex.rs
+msgid "Two ^ or two _ in a row: group them with braces, as in x^{a^b}."
+msgstr "Dois ^ ou dois _ seguidos: agrupe com chaves, como x^{a^b}."
+
+#: src/backend/latex.rs
+msgid "Unbalanced braces: check that every { has its }."
+msgstr "Chaves desbalanceadas: confira se cada { tem o seu }."
+
+#: src/backend/latex.rs
+msgid "Unknown command: check the spelling, or load the package that defines it with \\usepackage{…}."
+msgstr "Comando desconhecido: confira a grafia, ou carregue com \\usepackage{…} o pacote que o define."
+
+#: src/backend/latex.rs
+msgid "Unknown environment: check the spelling, or load the package that defines it."
+msgstr "Ambiente desconhecido: confira a grafia, ou carregue o pacote que o define."
+
+#: src/backend/latex.rs
+msgid "Unknown label. Check the matching \\label (it shows as \"??\" in the PDF)."
+msgstr "Rótulo inexistente. Confira o \\label correspondente (vira \"??\" no PDF)."
+
+#: src/backend/latex.rs
+msgid "\\\\ with no line to end. To start a new paragraph, leave a blank line."
+msgstr "\\\\ sem linha para terminar. Para mudar de parágrafo, deixe uma linha em branco."
+
+#: src/backend/latex.rs
+msgid "could not run {bin}: {e}"
+msgstr "não foi possível executar {bin}: {e}"
+
+#: src/dialogs.rs
+msgid "%m/%d/%Y, %H:%M"
+msgstr "%d/%m/%Y, %H:%M"
+
+#: src/dialogs.rs
+msgid "(none)"
+msgstr "(nenhuma)"
+
+#: src/dialogs.rs
+msgid ".bib key"
+msgstr "Chave do .bib"
+
+#: src/dialogs.rs
+msgid "A snippet shows in the autocomplete when you type its trigger (starting with \\). Use | to mark where the cursor lands."
+msgstr "Um snippet aparece no autocomplete ao digitar o gatilho (começando com \\). Use | para marcar onde o cursor fica."
+
+#: src/dialogs.rs
+msgid "A snippet with that trigger already exists."
+msgstr "Já existe um snippet com esse gatilho."
+
+#: src/dialogs.rs
+msgid "Add"
+msgstr "Adicionar"
+
+#: src/dialogs.rs
+msgid "Body"
+msgstr "Corpo"
+
+#: src/dialogs.rs
+msgid "Borders on every cell"
+msgstr "Bordas em todas as células"
+
+#: src/dialogs.rs
+msgid "Cancel"
+msgstr "Cancelar"
+
+
+#: src/dialogs.rs
+msgid "Description"
+msgstr "Descrição"
+
+#: src/dialogs.rs
+msgid "First row as a header"
+msgstr "Primeira linha como cabeçalho"
+
+
+#: src/dialogs.rs
+msgid "Insert table"
+msgstr "Inserir tabela"
+
+
+#: src/dialogs.rs
+msgid "Keyboard shortcuts"
+msgstr "Atalhos do teclado"
+
+
+#: src/dialogs.rs
+msgid "Local history: {name}"
+msgstr "Histórico local: {name}"
+
+#: src/dialogs.rs
+msgid "New snippet"
+msgstr "Novo snippet"
+
+#: src/dialogs.rs
+msgid "No occurrence of \"{query}\" in the project."
+msgstr "Nenhuma ocorrência de \"{query}\" no projeto."
+
+#: src/dialogs.rs
+msgid "No snippet yet."
+msgstr "Nenhum snippet ainda."
+
+#: src/dialogs.rs
+msgid "No versions of this file yet. They appear as it is saved."
+msgstr "Ainda não há versões deste arquivo. Elas aparecem conforme ele é salvo."
+
+#: src/dialogs.rs
+msgid "One version every ~2 minutes of work, kept in .tectec/history. Restoring can be undone too."
+msgstr "Uma versão a cada ~2 minutos de trabalho, guardada em .tectec/history. Restaurar também é reversível."
+
+#: src/dialogs.rs src/editor/mod.rs
+msgid "Replace all"
+msgstr "Substituir tudo"
+
+#: src/dialogs.rs src/editor/mod.rs
+msgid "Replace with"
+msgstr "Substituir por"
+
+#: src/dialogs.rs
+msgid "Restore this version"
+msgstr "Restaurar esta versão"
+
+#: src/dialogs.rs
+msgid "Save snippet"
+msgstr "Salvar snippet"
+
+#: src/dialogs.rs src/editor/mod.rs
+msgid "Search"
+msgstr "Buscar"
+
+#: src/dialogs.rs
+msgid "Search (case-insensitive)"
+msgstr "Buscar (sem diferenciar maiúsculas)"
+
+#: src/dialogs.rs
+msgid "Snippets"
+msgstr "Snippets"
+
+#: src/dialogs.rs
+msgid "Summary"
+msgstr "Resumo"
+
+#: src/dialogs.rs
+msgid "That trigger is already a built-in command."
+msgstr "Esse gatilho já é um comando embutido."
+
+#: src/dialogs.rs
+msgid "The body cannot be empty."
+msgstr "O corpo não pode ficar vazio."
+
+#: src/dialogs.rs
+msgid "The trigger must be \\ followed only by letters."
+msgstr "O gatilho precisa ser \\ seguido só de letras."
+
+#: src/dialogs.rs
+msgid "Trigger"
+msgstr "Gatilho"
+
+#: src/dialogs.rs src/inserts.rs
+msgid "Type"
+msgstr "Tipo"
+
+#: src/dialogs.rs
+msgid "Year"
+msgstr "Ano"
+
+#: src/dialogs.rs
+msgid "columns: "
+msgstr "colunas: "
+
+#: src/dialogs.rs
+msgid "in {n} file"
+msgid_plural "in {n} files"
+msgstr[0] "em {n} arquivo"
+msgstr[1] "em {n} arquivos"
+
+#: src/dialogs.rs
+msgid "rows: "
+msgstr "linhas: "
+
+#: src/dialogs.rs
+msgid "same as the current text"
+msgstr "igual ao texto atual"
+
+#: src/dialogs.rs
+msgid "today, {time}"
+msgstr "hoje, {time}"
+
+#: src/dialogs.rs
+msgid "yesterday, {time}"
+msgstr "ontem, {time}"
+
+#: src/dialogs.rs
+msgid "{n} line different from the current one"
+msgid_plural "{n} lines different from the current one"
+msgstr[0] "{n} linha diferente do atual"
+msgstr[1] "{n} linhas diferentes do atual"
+
+#: src/dialogs.rs
+msgid "{n} occurrence of \"{query}\""
+msgid_plural "{n} occurrences of \"{query}\""
+msgstr[0] "{n} ocorrência de \"{query}\""
+msgstr[1] "{n} ocorrências de \"{query}\""
+
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "bold"
+msgstr "negrito"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "citation"
+msgstr "citação"
+
+#: src/editor/completion.rs
+msgid "custom snippet"
+msgstr "snippet personalizado"
+
+#: src/editor/completion.rs
+msgid "defined in {place}"
+msgstr "definido em {place}"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "footnote"
+msgstr "nota de rodapé"
+
+#: src/editor/completion.rs
+msgid "from the project"
+msgstr "do projeto"
+
+#: src/editor/completion.rs
+msgid "from the project · {n} arg."
+msgstr "do projeto · {n} arg."
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "highlight"
+msgstr "marca-texto"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "horizontal space"
+msgstr "espaço horizontal"
+
+#: src/editor/completion.rs
+msgid "image"
+msgstr "imagem"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "italic"
+msgstr "itálico"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "numbered list"
+msgstr "lista numerada"
+
+#: src/editor/completion.rs
+msgid "package {package}"
+msgstr "pacote {package}"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "small caps"
+msgstr "versalete"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "subscript"
+msgstr "subscrito"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "superscript"
+msgstr "sobrescrito"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "table"
+msgstr "tabela"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "table of contents"
+msgstr "sumário"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "today's date"
+msgstr "data de hoje"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "underline"
+msgstr "sublinhado"
+
+#: src/editor/completion.rs src/editor/latex_db.rs
+msgid "vertical space"
+msgstr "espaço vertical"
+
+#: src/editor/latex_db.rs
+msgid ".bib file"
+msgstr "arquivo .bib"
+
+#: src/editor/latex_db.rs
+msgid ".bib file(s)"
+msgstr "arquivo(s) .bib"
+
+#: src/editor/latex_db.rs
+msgid "1.5 spacing"
+msgstr "espaçamento 1,5"
+
+#: src/editor/latex_db.rs
+msgid "1em space"
+msgstr "espaço de 1em"
+
+#: src/editor/latex_db.rs
+msgid "2em space"
+msgstr "espaço de 2em"
+
+#: src/editor/latex_db.rs
+msgid "LaTeX logo"
+msgstr "logo do LaTeX"
+
+#: src/editor/latex_db.rs
+msgid "TeX logo"
+msgstr "logo do TeX"
+
+#: src/editor/latex_db.rs
+msgid "TikZ drawing"
+msgstr "desenho TikZ"
+
+#: src/editor/latex_db.rs
+msgid "TikZ libraries"
+msgstr "bibliotecas do TikZ"
+
+#: src/editor/latex_db.rs
+msgid "URL"
+msgstr "URL"
+
+#: src/editor/latex_db.rs
+msgid "abstract"
+msgstr "resumo"
+
+#: src/editor/latex_db.rs
+msgid "adds to a length"
+msgstr "soma a um comprimento"
+
+#: src/editor/latex_db.rs
+msgid "adds to the bibliography without citing"
+msgstr "inclui na bibliografia sem citar"
+
+#: src/editor/latex_db.rs
+msgid "aligned equations"
+msgstr "equações alinhadas"
+
+#: src/editor/latex_db.rs
+msgid "aligned equations, unnumbered"
+msgstr "equações alinhadas, sem número"
+
+#: src/editor/latex_db.rs
+msgid "aligns left"
+msgstr "alinha à esquerda"
+
+#: src/editor/latex_db.rs
+msgid "aligns right"
+msgstr "alinha à direita"
+
+#: src/editor/latex_db.rs
+msgid "appendices"
+msgstr "apêndices"
+
+#: src/editor/latex_db.rs
+msgid "arccosine"
+msgstr "arco cosseno"
+
+#: src/editor/latex_db.rs
+msgid "arcsine"
+msgstr "arco seno"
+
+#: src/editor/latex_db.rs
+msgid "arctangent"
+msgstr "arco tangente"
+
+#: src/editor/latex_db.rs
+msgid "array in math"
+msgstr "arranjo na matemática"
+
+#: src/editor/latex_db.rs
+msgid "arrow with a label"
+msgstr "seta com rótulo"
+
+#: src/editor/latex_db.rs
+msgid "author(s)"
+msgstr "autor(es)"
+
+#: src/editor/latex_db.rs
+msgid "back matter (book)"
+msgstr "parte pós-textual (book)"
+
+#: src/editor/latex_db.rs
+msgid "bar ā"
+msgstr "barra ā"
+
+#: src/editor/latex_db.rs
+msgid "beamer theme"
+msgstr "tema do beamer"
+
+#: src/editor/latex_db.rs
+msgid "bibliography style (plain, abbrv…)"
+msgstr "estilo bibliográfico (plain, abbrv…)"
+
+#: src/editor/latex_db.rs
+msgid "big delimiter"
+msgstr "delimitador grande"
+
+#: src/editor/latex_db.rs
+msgid "big skip"
+msgstr "pulo grande"
+
+#: src/editor/latex_db.rs
+msgid "bigger delimiter"
+msgstr "delimitador maior"
+
+#: src/editor/latex_db.rs
+msgid "binomial"
+msgstr "binomial"
+
+#: src/editor/latex_db.rs
+msgid "blackboard ℝ ℕ ℤ"
+msgstr "blackboard ℝ ℕ ℤ"
+
+#: src/editor/latex_db.rs
+msgid "block (beamer)"
+msgstr "bloco (beamer)"
+
+#: src/editor/latex_db.rs
+msgid "bold (declaration)"
+msgstr "negrito (declaração)"
+
+#: src/editor/latex_db.rs
+msgid "bold in math"
+msgstr "negrito na matemática"
+
+#: src/editor/latex_db.rs
+msgid "bold symbol"
+msgstr "símbolo em negrito"
+
+#: src/editor/latex_db.rs
+msgid "bottom rule"
+msgstr "linha inferior"
+
+#: src/editor/latex_db.rs
+msgid "box of a given width"
+msgstr "caixa de largura dada"
+
+#: src/editor/latex_db.rs
+msgid "box without breaks"
+msgstr "caixa sem quebra"
+
+#: src/editor/latex_db.rs
+msgid "bulleted list"
+msgstr "lista com marcadores"
+
+#: src/editor/latex_db.rs
+msgid "calligraphic 𝒜"
+msgstr "caligráfico 𝒜"
+
+#: src/editor/latex_db.rs
+msgid "caption"
+msgstr "legenda"
+
+#: src/editor/latex_db.rs
+msgid "caption outside a float"
+msgstr "legenda fora de flutuante"
+
+#: src/editor/latex_db.rs
+msgid "caption with a short version"
+msgstr "legenda com versão curta"
+
+#: src/editor/latex_db.rs
+msgid "cell across several columns"
+msgstr "célula em várias colunas"
+
+#: src/editor/latex_db.rs
+msgid "cell across several rows"
+msgstr "célula em várias linhas"
+
+#: src/editor/latex_db.rs
+msgid "centred"
+msgstr "centralizado"
+
+#: src/editor/latex_db.rs
+msgid "centred equations"
+msgstr "equações centralizadas"
+
+#: src/editor/latex_db.rs
+msgid "centred equations, unnumbered"
+msgstr "equações centralizadas, sem número"
+
+#: src/editor/latex_db.rs
+msgid "centres"
+msgstr "centraliza"
+
+#: src/editor/latex_db.rs
+msgid "changes the colour"
+msgstr "muda a cor"
+
+#: src/editor/latex_db.rs
+msgid "chapter"
+msgstr "capítulo"
+
+#: src/editor/latex_db.rs
+msgid "citation in a footnote"
+msgstr "citação em nota de rodapé"
+
+#: src/editor/latex_db.rs
+msgid "citation in the configured style"
+msgstr "citação no estilo configurado"
+
+#: src/editor/latex_db.rs
+msgid "clever reference"
+msgstr "referência inteligente"
+
+#: src/editor/latex_db.rs
+msgid "clever reference, capitalized"
+msgstr "referência inteligente, maiúscula"
+
+#: src/editor/latex_db.rs
+msgid "closes an environment"
+msgstr "fecha um ambiente"
+
+#: src/editor/latex_db.rs
+msgid "coloured background"
+msgstr "fundo colorido"
+
+#: src/editor/latex_db.rs
+msgid "coloured text"
+msgstr "texto colorido"
+
+#: src/editor/latex_db.rs
+msgid "column width"
+msgstr "largura da coluna"
+
+#: src/editor/latex_db.rs
+msgid "columns (beamer)"
+msgstr "colunas (beamer)"
+
+#: src/editor/latex_db.rs
+msgid "compiles only these \\include"
+msgstr "compila só estes \\include"
+
+#: src/editor/latex_db.rs
+msgid "configures hyperref"
+msgstr "configura o hyperref"
+
+#: src/editor/latex_db.rs
+msgid "contour integral ∮"
+msgstr "integral de contorno ∮"
+
+#: src/editor/latex_db.rs
+msgid "corollary"
+msgstr "corolário"
+
+#: src/editor/latex_db.rs
+msgid "cosine"
+msgstr "cosseno"
+
+#: src/editor/latex_db.rs
+msgid "date (\\today for today)"
+msgstr "data (\\today para hoje)"
+
+#: src/editor/latex_db.rs
+msgid "defines a colour"
+msgstr "define uma cor"
+
+#: src/editor/latex_db.rs
+msgid "definition"
+msgstr "definição"
+
+#: src/editor/latex_db.rs
+msgid "definition by cases"
+msgstr "definição por casos"
+
+#: src/editor/latex_db.rs
+msgid "degree"
+msgstr "grau"
+
+#: src/editor/latex_db.rs
+msgid "description list"
+msgstr "lista de descrições"
+
+#: src/editor/latex_db.rs
+msgid "determinant"
+msgstr "determinante"
+
+#: src/editor/latex_db.rs
+msgid "dimension"
+msgstr "dimensão"
+
+#: src/editor/latex_db.rs
+msgid "display fraction"
+msgstr "fração grande"
+
+#: src/editor/latex_db.rs
+msgid "display style"
+msgstr "estilo destacado"
+
+#: src/editor/latex_db.rs
+msgid "document class"
+msgstr "classe do documento"
+
+#: src/editor/latex_db.rs
+msgid "document title"
+msgstr "título do documento"
+
+#: src/editor/latex_db.rs
+msgid "dot (derivative)"
+msgstr "ponto (derivada)"
+
+#: src/editor/latex_db.rs
+msgid "double dot"
+msgstr "dois pontos"
+
+#: src/editor/latex_db.rs
+msgid "double integral ∬"
+msgstr "integral dupla ∬"
+
+#: src/editor/latex_db.rs
+msgid "double spacing"
+msgstr "espaçamento duplo"
+
+#: src/editor/latex_db.rs
+msgid "draws a path"
+msgstr "desenha um caminho"
+
+#: src/editor/latex_db.rs
+msgid "ellipsis"
+msgstr "reticências"
+
+#: src/editor/latex_db.rs
+msgid "ellipsis …"
+msgstr "reticências …"
+
+#: src/editor/latex_db.rs
+msgid "emphasis"
+msgstr "ênfase"
+
+#: src/editor/latex_db.rs
+msgid "end of paragraph"
+msgstr "fim de parágrafo"
+
+#: src/editor/latex_db.rs
+msgid "end of proof ∎"
+msgstr "fim de demonstração ∎"
+
+#: src/editor/latex_db.rs
+msgid "equation reference, in parentheses"
+msgstr "referência a equação, entre parênteses"
+
+#: src/editor/latex_db.rs
+msgid "example"
+msgstr "exemplo"
+
+#: src/editor/latex_db.rs
+msgid "exponential"
+msgstr "exponencial"
+
+#: src/editor/latex_db.rs src/editor/lint.rs
+msgid "figure"
+msgstr "figura"
+
+#: src/editor/latex_db.rs
+msgid "figure across two columns"
+msgstr "figura em duas colunas"
+
+#: src/editor/latex_db.rs
+msgid "fills"
+msgstr "preenche"
+
+#: src/editor/latex_db.rs
+msgid "fixed-width table"
+msgstr "tabela de largura fixa"
+
+#: src/editor/latex_db.rs
+msgid "footnote mark"
+msgstr "marca de nota de rodapé"
+
+#: src/editor/latex_db.rs
+msgid "footnote size"
+msgstr "tamanho de nota"
+
+#: src/editor/latex_db.rs
+msgid "footnote text"
+msgstr "texto de nota de rodapé"
+
+#: src/editor/latex_db.rs
+msgid "formatted number"
+msgstr "número formatado"
+
+#: src/editor/latex_db.rs
+msgid "fraction"
+msgstr "fração"
+
+#: src/editor/latex_db.rs
+msgid "fraktur 𝔄"
+msgstr "fraktur 𝔄"
+
+#: src/editor/latex_db.rs
+msgid "framed box"
+msgstr "caixa com moldura"
+
+#: src/editor/latex_db.rs
+msgid "front matter (book)"
+msgstr "parte pré-textual (book)"
+
+#: src/editor/latex_db.rs
+msgid "gcd"
+msgstr "mdc"
+
+#: src/editor/latex_db.rs
+msgid "grid of cells"
+msgstr "grade de células"
+
+#: src/editor/latex_db.rs
+msgid "growing braces"
+msgstr "chaves que crescem"
+
+#: src/editor/latex_db.rs
+msgid "growing brackets"
+msgstr "colchetes que crescem"
+
+#: src/editor/latex_db.rs
+msgid "growing parentheses"
+msgstr "parênteses que crescem"
+
+#: src/editor/latex_db.rs
+msgid "hat â"
+msgstr "circunflexo â"
+
+#: src/editor/latex_db.rs
+msgid "highlighted code"
+msgstr "código com realce"
+
+#: src/editor/latex_db.rs
+msgid "horizontal rule"
+msgstr "linha horizontal"
+
+#: src/editor/latex_db.rs
+msgid "huge"
+msgstr "enorme"
+
+#: src/editor/latex_db.rs
+msgid "image folders"
+msgstr "pastas de imagens"
+
+#: src/editor/latex_db.rs
+msgid "in quotes"
+msgstr "entre aspas"
+
+#: src/editor/latex_db.rs
+msgid "infimum"
+msgstr "ínfimo"
+
+#: src/editor/latex_db.rs
+msgid "inline code"
+msgstr "código em linha"
+
+#: src/editor/latex_db.rs
+msgid "inserts a chapter (with \\clearpage)"
+msgstr "insere um capítulo (com \\clearpage)"
+
+#: src/editor/latex_db.rs
+msgid "inserts an image"
+msgstr "insere imagem"
+
+#: src/editor/latex_db.rs
+msgid "inserts an image (half width)"
+msgstr "insere imagem (meia largura)"
+
+#: src/editor/latex_db.rs
+msgid "inserts another .tex file"
+msgstr "insere outro arquivo .tex"
+
+#: src/editor/latex_db.rs
+msgid "integral ∫"
+msgstr "integral ∫"
+
+#: src/editor/latex_db.rs
+msgid "intersection ⋂"
+msgstr "interseção ⋂"
+
+#: src/editor/latex_db.rs
+msgid "italic (declaration)"
+msgstr "itálico (declaração)"
+
+#: src/editor/latex_db.rs
+msgid "italic in math"
+msgstr "itálico na matemática"
+
+#: src/editor/latex_db.rs
+msgid "item with a label"
+msgstr "item com rótulo"
+
+#: src/editor/latex_db.rs
+msgid "justified line break"
+msgstr "quebra de linha justificada"
+
+#: src/editor/latex_db.rs
+msgid "kernel"
+msgstr "núcleo"
+
+#: src/editor/latex_db.rs
+msgid "label for references"
+msgstr "rótulo para referências"
+
+#: src/editor/latex_db.rs
+msgid "large"
+msgstr "grande"
+
+#: src/editor/latex_db.rs
+msgid "larger"
+msgstr "maior"
+
+#: src/editor/latex_db.rs
+msgid "largest"
+msgstr "máximo"
+
+#: src/editor/latex_db.rs
+msgid "left delimiter"
+msgstr "delimitador à esquerda"
+
+#: src/editor/latex_db.rs
+msgid "left-aligned"
+msgstr "alinhado à esquerda"
+
+#: src/editor/latex_db.rs
+msgid "lemma"
+msgstr "lema"
+
+#: src/editor/latex_db.rs
+msgid "limit"
+msgstr "limite"
+
+#: src/editor/latex_db.rs
+msgid "limit with x → …"
+msgstr "limite com x → …"
+
+#: src/editor/latex_db.rs
+msgid "limits above/below"
+msgstr "limites em cima/embaixo"
+
+#: src/editor/latex_db.rs
+msgid "line spacing"
+msgstr "entrelinha"
+
+#: src/editor/latex_db.rs
+msgid "line width"
+msgstr "largura da linha"
+
+#: src/editor/latex_db.rs
+msgid "link with text"
+msgstr "link com texto"
+
+#: src/editor/latex_db.rs
+msgid "list item"
+msgstr "item de lista"
+
+#: src/editor/latex_db.rs
+msgid "list of figures"
+msgstr "lista de figuras"
+
+#: src/editor/latex_db.rs
+msgid "list of tables"
+msgstr "lista de tabelas"
+
+#: src/editor/latex_db.rs
+msgid "loads a package"
+msgstr "carrega um pacote"
+
+#: src/editor/latex_db.rs
+msgid "logarithm"
+msgstr "logaritmo"
+
+#: src/editor/latex_db.rs
+msgid "long equation over several lines"
+msgstr "equação longa em várias linhas"
+
+#: src/editor/latex_db.rs
+msgid "long quotation"
+msgstr "citação longa"
+
+#: src/editor/latex_db.rs
+msgid "main matter (book)"
+msgstr "parte textual (book)"
+
+#: src/editor/latex_db.rs
+msgid "makes the title"
+msgstr "gera o título"
+
+#: src/editor/latex_db.rs
+msgid "manual bibliography"
+msgstr "bibliografia manual"
+
+#: src/editor/latex_db.rs
+msgid "matrix in brackets"
+msgstr "matriz entre colchetes"
+
+#: src/editor/latex_db.rs
+msgid "matrix in parentheses"
+msgstr "matriz entre parênteses"
+
+#: src/editor/latex_db.rs
+msgid "matrix without delimiters"
+msgstr "matriz sem delimitadores"
+
+#: src/editor/latex_db.rs
+msgid "medium skip"
+msgstr "pulo médio"
+
+#: src/editor/latex_db.rs
+msgid "middle rule"
+msgstr "linha do meio"
+
+#: src/editor/latex_db.rs
+msgid "minimum"
+msgstr "mínimo"
+
+#: src/editor/latex_db.rs
+msgid "monospace"
+msgstr "monoespaçado"
+
+#: src/editor/latex_db.rs
+msgid "monospace (declaration)"
+msgstr "monoespaçado (declaração)"
+
+#: src/editor/latex_db.rs
+msgid "monospace in math"
+msgstr "monoespaçado na matemática"
+
+#: src/editor/latex_db.rs
+msgid "n-th root"
+msgstr "raiz n-ésima"
+
+#: src/editor/latex_db.rs
+msgid "named operator"
+msgstr "operador com nome"
+
+#: src/editor/latex_db.rs
+msgid "natural logarithm"
+msgstr "logaritmo natural"
+
+#: src/editor/latex_db.rs
+msgid "new command"
+msgstr "novo comando"
+
+#: src/editor/latex_db.rs
+msgid "new command with an argument"
+msgstr "novo comando com argumento"
+
+#: src/editor/latex_db.rs
+msgid "new counter"
+msgstr "novo contador"
+
+#: src/editor/latex_db.rs
+msgid "new environment"
+msgstr "novo ambiente"
+
+#: src/editor/latex_db.rs
+msgid "new line"
+msgstr "nova linha"
+
+#: src/editor/latex_db.rs
+msgid "new odd page"
+msgstr "nova página ímpar"
+
+#: src/editor/latex_db.rs
+msgid "new operator"
+msgstr "novo operador"
+
+#: src/editor/latex_db.rs
+msgid "new page"
+msgstr "nova página"
+
+#: src/editor/latex_db.rs
+msgid "new page, flushing floats"
+msgstr "nova página, despejando flutuantes"
+
+#: src/editor/latex_db.rs
+msgid "new theorem"
+msgstr "novo teorema"
+
+#: src/editor/latex_db.rs
+msgid "no indent"
+msgstr "sem recuo"
+
+#: src/editor/latex_db.rs
+msgid "no number on this line"
+msgstr "sem número nesta linha"
+
+#: src/editor/latex_db.rs
+msgid "node"
+msgstr "nó"
+
+#: src/editor/latex_db.rs
+msgid "normal"
+msgstr "normal"
+
+#: src/editor/latex_db.rs
+msgid "normal font"
+msgstr "fonte normal"
+
+#: src/editor/latex_db.rs
+msgid "number with a unit"
+msgstr "número com unidade"
+
+#: src/editor/latex_db.rs
+msgid "numbered equation"
+msgstr "equação numerada"
+
+#: src/editor/latex_db.rs
+msgid "numbering (arabic, roman…)"
+msgstr "numeração (arabic, roman…)"
+
+#: src/editor/latex_db.rs
+msgid "opens an environment"
+msgstr "abre um ambiente"
+
+#: src/editor/latex_db.rs
+msgid "overbrace"
+msgstr "chave por cima"
+
+#: src/editor/latex_db.rs
+msgid "overline"
+msgstr "barra por cima"
+
+#: src/editor/latex_db.rs
+msgid "page of a label"
+msgstr "página de um rótulo"
+
+#: src/editor/latex_db.rs
+msgid "page style (plain, empty, fancy…)"
+msgstr "estilo de página (plain, empty, fancy…)"
+
+#: src/editor/latex_db.rs
+msgid "paragraph box"
+msgstr "caixa de parágrafo"
+
+#: src/editor/latex_db.rs
+msgid "paragraph indent"
+msgstr "recuo de parágrafo"
+
+#: src/editor/latex_db.rs
+msgid "paragraph with a title"
+msgstr "parágrafo com título"
+
+#: src/editor/latex_db.rs
+msgid "parenthetical citation"
+msgstr "citação entre parênteses"
+
+#: src/editor/latex_db.rs
+msgid "part"
+msgstr "parte"
+
+#: src/editor/latex_db.rs
+msgid "partial rule"
+msgstr "linha parcial"
+
+#: src/editor/latex_db.rs
+msgid "pause between reveals"
+msgstr "pausa entre revelações"
+
+#: src/editor/latex_db.rs
+msgid "prints the bibliography"
+msgstr "imprime a bibliografia"
+
+#: src/editor/latex_db.rs
+msgid "probability"
+msgstr "probabilidade"
+
+#: src/editor/latex_db.rs
+msgid "product ∏"
+msgstr "produtório ∏"
+
+#: src/editor/latex_db.rs
+msgid "proof"
+msgstr "demonstração"
+
+#: src/editor/latex_db.rs
+msgid "proposition"
+msgstr "proposição"
+
+#: src/editor/latex_db.rs
+msgid "quantity with a unit"
+msgstr "quantidade com unidade"
+
+#: src/editor/latex_db.rs
+msgid "quotes “"
+msgstr "aspas “"
+
+#: src/editor/latex_db.rs
+msgid "raises the content"
+msgstr "eleva o conteúdo"
+
+#: src/editor/latex_db.rs
+msgid "redefines a command"
+msgstr "redefine comando"
+
+#: src/editor/latex_db.rs
+msgid "reference to a label"
+msgstr "referência a um rótulo"
+
+#: src/editor/latex_db.rs
+msgid "reference with its name (Figure 2…)"
+msgstr "referência com o nome (Figura 2…)"
+
+#: src/editor/latex_db.rs
+msgid "remark"
+msgstr "observação"
+
+#: src/editor/latex_db.rs
+msgid "resizes"
+msgstr "redimensiona"
+
+#: src/editor/latex_db.rs
+msgid "right-aligned"
+msgstr "alinhado à direita"
+
+#: src/editor/latex_db.rs
+msgid "roman in math"
+msgstr "romano na matemática"
+
+#: src/editor/latex_db.rs
+msgid "rotates"
+msgstr "rotaciona"
+
+#: src/editor/latex_db.rs
+msgid "sans serif"
+msgstr "sem serifa"
+
+#: src/editor/latex_db.rs
+msgid "sans serif in math"
+msgstr "sem serifa na matemática"
+
+#: src/editor/latex_db.rs
+msgid "scales"
+msgstr "escala"
+
+#: src/editor/latex_db.rs
+msgid "script size"
+msgstr "tamanho de índice"
+
+#: src/editor/latex_db.rs
+msgid "section"
+msgstr "seção"
+
+#: src/editor/latex_db.rs
+msgid "serif"
+msgstr "com serifa"
+
+#: src/editor/latex_db.rs
+msgid "sets a counter"
+msgstr "define contador"
+
+#: src/editor/latex_db.rs
+msgid "sets a length"
+msgstr "define um comprimento"
+
+#: src/editor/latex_db.rs
+msgid "several lines in a subscript"
+msgstr "várias linhas no índice"
+
+#: src/editor/latex_db.rs
+msgid "short quotation"
+msgstr "citação curta"
+
+#: src/editor/latex_db.rs
+msgid "sine"
+msgstr "seno"
+
+#: src/editor/latex_db.rs
+msgid "slanted"
+msgstr "inclinado"
+
+#: src/editor/latex_db.rs
+msgid "slide (beamer)"
+msgstr "slide (beamer)"
+
+#: src/editor/latex_db.rs
+msgid "slide title"
+msgstr "título do slide"
+
+#: src/editor/latex_db.rs
+msgid "small"
+msgstr "pequeno"
+
+#: src/editor/latex_db.rs
+msgid "small skip"
+msgstr "pulo pequeno"
+
+#: src/editor/latex_db.rs
+msgid "source code"
+msgstr "código-fonte"
+
+#: src/editor/latex_db.rs
+msgid "space between paragraphs"
+msgstr "espaço entre parágrafos"
+
+#: src/editor/latex_db.rs
+msgid "splits an equation"
+msgstr "divide uma equação"
+
+#: src/editor/latex_db.rs
+msgid "square root"
+msgstr "raiz quadrada"
+
+#: src/editor/latex_db.rs
+msgid "stacked symbol"
+msgstr "símbolo empilhado"
+
+#: src/editor/latex_db.rs
+msgid "starts the appendices"
+msgstr "começa os apêndices"
+
+#: src/editor/latex_db.rs
+msgid "steps a counter"
+msgstr "incrementa contador"
+
+#: src/editor/latex_db.rs
+msgid "stretches horizontally"
+msgstr "estica horizontalmente"
+
+#: src/editor/latex_db.rs
+msgid "stretches vertically"
+msgstr "estica verticalmente"
+
+#: src/editor/latex_db.rs
+msgid "strikethrough"
+msgstr "riscado"
+
+#: src/editor/latex_db.rs
+msgid "style of this page only"
+msgstr "estilo só desta página"
+
+#: src/editor/latex_db.rs
+msgid "subfigure"
+msgstr "subfigura"
+
+#: src/editor/latex_db.rs
+msgid "subfigure caption"
+msgstr "legenda de subfigura"
+
+#: src/editor/latex_db.rs
+msgid "subordinate numbering"
+msgstr "numeração subordinada"
+
+#: src/editor/latex_db.rs
+msgid "subparagraph"
+msgstr "subparágrafo"
+
+#: src/editor/latex_db.rs
+msgid "subsection"
+msgstr "subseção"
+
+#: src/editor/latex_db.rs
+msgid "subsubsection"
+msgstr "sub-subseção"
+
+#: src/editor/latex_db.rs
+msgid "suggested page break"
+msgstr "quebra de página sugerida"
+
+#: src/editor/latex_db.rs
+msgid "sum ∑"
+msgstr "somatório ∑"
+
+#: src/editor/latex_db.rs
+msgid "supremum"
+msgstr "supremo"
+
+#: src/editor/latex_db.rs
+msgid "symbol above"
+msgstr "símbolo por cima"
+
+#: src/editor/latex_db.rs
+msgid "symbol below"
+msgstr "símbolo por baixo"
+
+#: src/editor/latex_db.rs
+msgid "tangent"
+msgstr "tangente"
+
+#: src/editor/latex_db.rs
+msgid "text between aligned lines"
+msgstr "texto entre linhas alinhadas"
+
+#: src/editor/latex_db.rs
+msgid "text fraction"
+msgstr "fração pequena"
+
+#: src/editor/latex_db.rs
+msgid "text height"
+msgstr "altura do texto"
+
+#: src/editor/latex_db.rs
+msgid "text in math"
+msgstr "texto na matemática"
+
+#: src/editor/latex_db.rs
+msgid "text width"
+msgstr "largura do texto"
+
+#: src/editor/latex_db.rs
+msgid "textual citation"
+msgstr "citação no texto"
+
+#: src/editor/latex_db.rs
+msgid "the document"
+msgstr "o documento"
+
+#: src/editor/latex_db.rs
+msgid "the equation's own number"
+msgstr "número próprio da equação"
+
+#: src/editor/latex_db.rs
+msgid "theorem"
+msgstr "teorema"
+
+#: src/editor/latex_db.rs
+msgid "tilde ã"
+msgstr "til ã"
+
+#: src/editor/latex_db.rs
+msgid "tiniest size"
+msgstr "tamanho mínimo"
+
+#: src/editor/latex_db.rs
+msgid "title of the referred section"
+msgstr "título da seção referida"
+
+#: src/editor/latex_db.rs
+msgid "to-do note"
+msgstr "nota de pendência"
+
+#: src/editor/latex_db.rs
+msgid "top rule"
+msgstr "linha superior"
+
+#: src/editor/latex_db.rs
+msgid "underbrace"
+msgstr "chave por baixo"
+
+#: src/editor/latex_db.rs
+msgid "underline (math)"
+msgstr "barra por baixo"
+
+#: src/editor/latex_db.rs
+msgid "union ⋃"
+msgstr "união ⋃"
+
+#: src/editor/latex_db.rs
+msgid "unit"
+msgstr "unidade"
+
+#: src/editor/latex_db.rs
+msgid "unnumbered chapter"
+msgstr "capítulo sem número"
+
+#: src/editor/latex_db.rs
+msgid "unnumbered equation"
+msgstr "equação sem número"
+
+#: src/editor/latex_db.rs
+msgid "unnumbered section"
+msgstr "seção sem número"
+
+#: src/editor/latex_db.rs
+msgid "unnumbered subsection"
+msgstr "subseção sem número"
+
+#: src/editor/latex_db.rs
+msgid "upright"
+msgstr "vertical"
+
+#: src/editor/latex_db.rs
+msgid "vector"
+msgstr "vetor"
+
+#: src/editor/latex_db.rs
+msgid "verbatim text"
+msgstr "texto literal"
+
+#: src/editor/latex_db.rs
+msgid "verbatim text (\\verb|...|)"
+msgstr "trecho literal (\\verb|...|)"
+
+#: src/editor/latex_db.rs
+msgid "vertical space that stays"
+msgstr "espaço vertical que não some"
+
+#: src/editor/latex_db.rs
+msgid "very big delimiter"
+msgstr "delimitador muito grande"
+
+#: src/editor/latex_db.rs
+msgid "very large"
+msgstr "muito grande"
+
+#: src/editor/latex_db.rs
+msgid "wide hat"
+msgstr "circunflexo largo"
+
+#: src/editor/latex_db.rs
+msgid "wide tilde"
+msgstr "til largo"
+
+#: src/editor/lint.rs
+msgid "A line break can separate “{word}” from the reference; tie them with ~."
+msgstr "Uma quebra de linha pode separar “{word}” da referência; una os dois com ~."
+
+#: src/editor/lint.rs
+msgid "Add a space"
+msgstr "Inserir um espaço"
+
+#: src/editor/lint.rs
+msgid "Add {label}"
+msgstr "Inserir {label}"
+
+#: src/editor/lint.rs
+msgid "Beginning of the document"
+msgstr "Início do documento"
+
+#: src/editor/lint.rs
+msgid "Comfortable line width"
+msgstr "Largura de linha confortável"
+
+#: src/editor/lint.rs
+msgid "Fix the suggestion at the cursor"
+msgstr "Corrigir a sugestão no cursor"
+
+#: src/editor/lint.rs
+msgid "Long sentence ({n} word): consider splitting it."
+msgid_plural "Long sentence ({n} words): consider splitting it."
+msgstr[0] "Frase longa ({n} palavra): considere dividi-la."
+msgstr[1] "Frase longa ({n} palavras): considere dividi-la."
+
+#: src/editor/lint.rs
+msgid "Missing space after the comma."
+msgstr "Falta um espaço depois da vírgula."
+
+#: src/editor/lint.rs
+msgid "Next suggestion"
+msgstr "Próxima sugestão"
+
+#: src/editor/lint.rs
+msgid "No suggestions in this file."
+msgstr "Nenhuma sugestão neste arquivo."
+
+#: src/editor/lint.rs
+msgid "Previous suggestion"
+msgstr "Sugestão anterior"
+
+#: src/editor/lint.rs
+msgid "Remove the second “{word}”"
+msgstr "Remover o segundo “{word}”"
+
+#: src/editor/lint.rs
+msgid "Remove the space"
+msgstr "Remover o espaço"
+
+#: src/editor/lint.rs
+msgid "Sections of this file"
+msgstr "Seções deste arquivo"
+
+#: src/editor/lint.rs
+msgid "Space before punctuation."
+msgstr "Espaço antes da pontuação."
+
+#: src/editor/lint.rs
+msgid "Straight quotes print as ” on both sides; LaTeX opens quotes with ``."
+msgstr "Aspas retas saem como ” dos dois lados; no LaTeX as aspas abrem com ``."
+
+#: src/editor/lint.rs
+msgid "This {env} has no \\label, so the text cannot refer to it."
+msgstr "Esta {env} não tem \\label, então o texto não pode se referir a ela."
+
+#: src/editor/lint.rs
+msgid "Three periods: \\dots spaces an ellipsis properly."
+msgstr "Três pontos: \\dots espaça as reticências corretamente."
+
+#: src/editor/lint.rs
+msgid "Use \\dots"
+msgstr "Usar \\dots"
+
+#: src/editor/lint.rs
+msgid "Use ``…''"
+msgstr "Usar ``…''"
+
+#: src/editor/lint.rs
+msgid "Use ~"
+msgstr "Usar ~"
+
+#: src/editor/lint.rs
+msgid "Writing review"
+msgstr "Revisão do texto"
+
+#: src/editor/lint.rs
+msgid "Writing review: F7 goes to the next one, Ctrl+. fixes it"
+msgstr "Revisão do texto: F7 vai para a próxima, Ctrl+. corrige"
+
+#: src/editor/lint.rs
+msgid "\\label before \\caption: \\ref will give the section's number, not the float's."
+msgstr "\\label antes de \\caption: o \\ref vai dar o número da seção, não o da figura ou tabela."
+
+#: src/editor/lint.rs
+msgid "{n} suggestion"
+msgid_plural "{n} suggestions"
+msgstr[0] "{n} sugestão"
+msgstr[1] "{n} sugestões"
+
+#: src/editor/lint.rs
+msgid "“{word}” is repeated."
+msgstr "“{word}” está repetida."
+
+#: src/editor/mod.rs
+msgid "Close (Esc)"
+msgstr "Fechar (Esc)"
+
+#: src/editor/mod.rs src/pdfview.rs
+msgid "Copy"
+msgstr "Copiar"
+
+#: src/widgets.rs
+msgid "Copied"
+msgstr "Copiado"
+
+#: src/editor/mod.rs
+msgid "Error"
+msgstr "Erro"
+
+#: src/editor/mod.rs
+msgid "Ignore \"{word}\""
+msgstr "Ignorar \"{word}\""
+
+#: src/editor/mod.rs
+msgid "Match case"
+msgstr "Diferenciar maiúsculas"
+
+#: src/editor/mod.rs
+msgid "Next (Enter)"
+msgstr "Próxima (Enter)"
+
+#: src/editor/mod.rs
+msgid "No suggestions"
+msgstr "Sem sugestões"
+
+#: src/editor/mod.rs
+msgid "Previous (Shift+Enter)"
+msgstr "Anterior (Shift+Enter)"
+
+#: src/editor/mod.rs
+msgid "Regular expression"
+msgstr "Expressão regular"
+
+#: src/editor/mod.rs
+msgid "Replaces the selected occurrence and goes to the next"
+msgstr "Substitui a ocorrência selecionada e vai para a próxima"
+
+#: src/editor/mod.rs
+msgid "Show/hide replace"
+msgstr "Mostrar/ocultar substituir"
+
+#: src/editor/mod.rs
+msgid "Warning"
+msgstr "Aviso"
+
+#: src/editor/mod.rs
+msgid "invalid regex"
+msgstr "regex inválida"
+
+#: src/editor/mod.rs
+msgid "no results"
+msgstr "nenhum resultado"
+
+#: src/editor/mod.rs
+msgid "{current} of {total}"
+msgstr "{current} de {total}"
+
+#: src/editor/mod.rs
+msgid "{n} result"
+msgid_plural "{n} results"
+msgstr[0] "{n} resultado"
+msgstr[1] "{n} resultados"
+
+#: src/mathpreview.rs
+msgid "Empty formula"
+msgstr "Fórmula vazia"
+
+#: src/mathpreview.rs
+msgid "Invalid formula"
+msgstr "Fórmula inválida"
+
+#: src/mathpreview.rs
+msgid "Invalid formula: {message}"
+msgstr "Fórmula inválida: {message}"
+
+#: src/mathpreview.rs
+msgid "Rendering the formula…"
+msgstr "Renderizando fórmula…"
+
+#: src/mathpreview.rs
+msgid "The formula took too long to render"
+msgstr "Fórmula demorou demais para renderizar"
+
+#: src/mathpreview.rs
+msgid "pdflatex not found, so the formula preview is unavailable"
+msgstr "pdflatex não encontrado, então o preview de fórmula está indisponível"
+
+#: src/pdfview.rs
+msgid "Copy the page's text"
+msgstr "Copiar texto da página"
+
+#: src/pdfview.rs
+msgid "Fit the whole page"
+msgstr "Ajustar à página inteira"
+
+#: src/pdfview.rs
+msgid "Fit the whole page again (Ctrl+0)"
+msgstr "Voltar a ajustar à página inteira (Ctrl+0)"
+
+#: src/pdfview.rs
+msgid "Fit the width"
+msgstr "Ajustar à largura"
+
+#: src/pdfview.rs
+msgid "Fit the width again (Ctrl+0)"
+msgstr "Voltar a ajustar à largura (Ctrl+0)"
+
+#: src/pdfview.rs
+msgid "Next page (PgDn)"
+msgstr "Próxima página (PgDn)"
+
+#: src/pdfview.rs
+msgid "Previous page (PgUp)"
+msgstr "Página anterior (PgUp)"
+
+#: src/pdfview.rs
+msgid "Save a version: keeps a dated copy of the PDF in {folder}/"
+msgstr "Gerar versão: salva uma cópia datada do PDF em {folder}/"
+
+#: src/pdfview.rs
+msgid "Select in the source"
+msgstr "Selecionar no código"
+
+#: src/pdfview.rs
+msgid "Zoom in (Ctrl+wheel, Ctrl+=)"
+msgstr "Aumentar zoom (Ctrl+roda, Ctrl+=)"
+
+#: src/pdfview.rs
+msgid "Zoom out (Ctrl+wheel, Ctrl+−)"
+msgstr "Diminuir zoom (Ctrl+roda, Ctrl+−)"
+
+#: src/settings.rs
+msgid "Bottom"
+msgstr "Base"
+
+#: src/settings.rs
+msgid "Files"
+msgstr "Arquivos"
+
+#: src/settings.rs
+msgid "Images"
+msgstr "Imagens"
+
+#: src/settings.rs
+msgid "Left"
+msgstr "Esquerda"
+
+#: src/settings.rs
+msgid "Outline"
+msgstr "Estrutura"
+
+#: src/settings.rs
+msgid "References"
+msgstr "Referências"
+
+#: src/settings.rs
+msgid "Right"
+msgstr "Direita"
+
+#: src/settings.rs
+msgid "Top"
+msgstr "Topo"
+
+#: src/spell.rs
+msgid "Spell check unavailable: {e}"
+msgstr "Verificação ortográfica indisponível: {e}"
+
+#: src/tray.rs
+msgid "Quit"
+msgstr "Sair"
+
+#: src/tray.rs
+msgid "Show TecTec"
+msgstr "Mostrar o TecTec"
+
+msgid "Dark"
+msgstr "Escuro"
+
+msgid "Find in the PDF"
+msgstr "Buscar no PDF"
+
+msgid "Find in the PDF (Ctrl+F over the preview)"
+msgstr "Buscar no PDF (Ctrl+F sobre o preview)"
+
+msgid "Follow the system"
+msgstr "Seguir o sistema"
+
+msgid "Font"
+msgstr "Fonte"
+
+msgid "Install latexmk for sturdier compilations (it runs BibTeX and the extra passes)."
+msgstr "Instale o latexmk para compilações mais robustas (ele roda o BibTeX e as passadas extras)."
+
+msgid "Light"
+msgstr "Claro"
+
+msgid "Monospaced"
+msgstr "Monoespaçada"
+
+msgid "Preferences"
+msgstr "Preferências"
+
+msgid "Preferences…"
+msgstr "Preferências…"
+
+msgid "Proportional"
+msgstr "Proporcional"
+
+msgid "Size"
+msgstr "Tamanho"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "no LaTeX compiler found on the PATH"
+msgstr "nenhum compilador LaTeX encontrado no PATH"
+
+msgid "{engine} is not installed."
+msgstr "o {engine} não está instalado."
+
+msgid "{engine} is not installed. To install it: {command}"
+msgstr "o {engine} não está instalado. Para instalar: {command}"
+
+msgid "T1 without a vector font: the PDF gets bitmap fonts, blurry when zoomed, and its text cannot be searched or copied."
+msgstr "T1 sem uma fonte vetorial: o PDF sai com fontes bitmap, borradas no zoom, e o texto não pode ser buscado nem copiado."
+
+msgid "ABNT academic work (TCC, thesis)…"
+msgstr "Trabalho acadêmico ABNT (TCC, tese)…"
+
+msgid "Article…"
+msgstr "Artigo…"
+
+msgid "At the bottom"
+msgstr "Embaixo"
+
+msgid "At the top"
+msgstr "Em cima"
+
+msgid "Interface language"
+msgstr "Idioma da interface"
+
+msgid "On the left"
+msgstr "À esquerda"
+
+msgid "On the right"
+msgstr "À direita"
+
+msgid "Presentation (beamer)…"
+msgstr "Apresentação (beamer)…"
+
+msgid "Preview position"
+msgstr "Posição do preview"
+
+msgid "Report or thesis…"
+msgstr "Relatório ou tese…"
+
+msgid "Papers"
+msgstr "Artigos"
+
+msgid "No notes yet. Notes are Markdown files kept with the project."
+msgstr "Nenhuma nota ainda. As notas são arquivos Markdown guardados com o projeto."
+
+msgid "No papers yet. Attach the PDFs you read to keep their keys and summaries here."
+msgstr "Nenhum artigo ainda. Anexe os PDFs que você lê para guardar aqui as chaves e os resumos."
+
+msgid "Maximize"
+msgstr "Maximizar"
+
+msgid "Minimize"
+msgstr "Minimizar"
+
+msgid "Restore"
+msgstr "Restaurar"
+
+msgid "A LaTeX package this document needs is not in the app yet, and it could not be downloaded. Connect to the internet once so it is fetched; after that it works offline."
+msgstr "Um pacote de LaTeX que este documento usa ainda não está no app, e não foi possível baixá-lo. Conecte-se à internet uma vez para que ele seja buscado; depois disso funciona offline."
+
+msgid "Built-in"
+msgstr "Embutido"
+
+msgid "Comes with the app: nothing to install. Packages it lacks are downloaded once."
+msgstr "Vem com o app: nada para instalar. Um pacote que falte é baixado uma única vez."
+
+msgid "Installed on the system"
+msgstr "Instalado no sistema"
+
+msgid "TeX Live or MiKTeX from the computer: pdfLaTeX, LuaLaTeX and biber."
+msgstr "TeX Live ou MiKTeX do computador: pdfLaTeX, LuaLaTeX e biber."
+
+msgid "The LaTeX package bundle could not be opened."
+msgstr "Não foi possível abrir o conjunto de pacotes do LaTeX."
+
+msgid "built-in LaTeX"
+msgstr "o LaTeX embutido"
+
+msgid "LaTeX built in: nothing to install."
+msgstr "LaTeX embutido: nada para instalar."
+
+msgid "\"{word}\" is not in the dictionary"
+msgstr "\"{word}\" não está no dicionário"
+
+msgid "1. Numbered"
+msgstr "1. Numerada"
+
+msgid "Add item"
+msgstr "Adicionar item"
+
+msgid "Centered"
+msgstr "Centralizado"
+
+msgid "Column"
+msgstr "Coluna"
+
+
+
+msgid "Heading"
+msgstr "Título"
+
+msgid "Insert list"
+msgstr "Inserir lista"
+
+msgid "Insert list…"
+msgstr "Inserir lista…"
+
+msgid "Item"
+msgstr "Item"
+
+msgid "LaTeX could not typeset this."
+msgstr "O LaTeX não conseguiu compor isto."
+
+msgid "LaTeX error: {message}"
+msgstr "Erro do LaTeX: {message}"
+
+msgid "Last column"
+msgstr "Última coluna"
+
+msgid "Last row"
+msgstr "Última linha"
+
+msgid "Less indented"
+msgstr "Menos recuado"
+
+msgid "List… (bulleted or numbered)"
+msgstr "Lista… (com marcadores ou numerada)"
+
+msgid "Nested in the item above"
+msgstr "Dentro do item de cima"
+
+msgid "Next"
+msgstr "Avançar"
+
+msgid "Row"
+msgstr "Linha"
+
+msgid "With caption and label"
+msgstr "Com legenda e rótulo"
+
+msgid "• Bulleted"
+msgstr "• Com marcadores"
+
+
+msgid "Merge the selected cell with the one on its right (\\multicolumn)"
+msgstr "Mescla a célula selecionada com a da direita (\\multicolumn)"
+
+msgid "Merge with the cell on the right"
+msgstr "Mesclar com a célula da direita"
+
+msgid "Merge →"
+msgstr "Mesclar →"
+
+msgid "Split"
+msgstr "Separar"
+
+msgid "Split cells"
+msgstr "Separar células"
+
+msgid "Split the selected merged cell"
+msgstr "Separa a célula mesclada selecionada"
+
+msgid "**Enter** adds an item; **‹ ›** nest it. LaTeX such as `\\textbf{…}` and `$x^2$` works."
+msgstr "**Enter** adiciona um item; **‹ ›** aninham. LaTeX como `\\textbf{…}` e `$x^2$` funciona."
+
+msgid "**Enter** goes to the cell below. To span columns, select a cell and use **Merge** (or right-click it). LaTeX such as `\\textbf{…}` and `$x^2$` works; `& % #` are escaped."
+msgstr "**Enter** vai para a célula de baixo. Para ocupar várias colunas, selecione uma célula e use **Mesclar** (ou clique com o botão direito). LaTeX como `\\textbf{…}` e `$x^2$` funciona; `& % #` são escapados."
+
+msgid "Caption"
+msgstr "Legenda"
+
+msgid "Cells"
+msgstr "Células"
+
+msgid "Click a square, or set the numbers."
+msgstr "Clique num quadrado ou ajuste os números."
+
+msgid "Label"
+msgstr "Rótulo"
+
+msgid "What the table shows"
+msgstr "Conteúdo da tabela"
+
+msgid "my-table"
+msgstr "minha-tabela"
+
+msgid "{n} row"
+msgid_plural "{n} rows"
+msgstr[0] "{n} linha"
+msgstr[1] "{n} linhas"
+
+msgid "{n} column"
+msgid_plural "{n} columns"
+msgstr[0] "{n} coluna"
+msgstr[1] "{n} colunas"
+
+#: src/inserts.rs
+msgid "Items"
+msgstr "Itens"
+
+#: src/inserts.rs
+msgid "{n} item"
+msgid_plural "{n} items"
+msgstr[0] "{n} item"
+msgstr[1] "{n} itens"
+
+#: src/inserts.rs
+msgid "Insert image"
+msgstr "Inserir imagem"
+
+#: src/app/actions.rs
+msgid "Insert image…"
+msgstr "Inserir imagem…"
+
+#: src/app/view.rs
+msgid "Image… (from the project or the computer)"
+msgstr "Imagem… (do projeto ou do computador)"
+
+#: src/inserts.rs
+msgid "Image"
+msgstr "Imagem"
+
+#: src/inserts.rs
+msgid "From the computer…"
+msgstr "Do computador…"
+
+#: src/inserts.rs
+msgid "Choose an image"
+msgstr "Escolha uma imagem"
+
+#: src/inserts.rs
+msgid "Filter"
+msgstr "Filtrar"
+
+#: src/inserts.rs
+msgid "As a figure, with caption and label"
+msgstr "Como figura, com legenda e rótulo"
+
+#: src/inserts.rs
+msgid "What the image shows"
+msgstr "O que a imagem mostra"
+
+#: src/inserts.rs
+msgid "my-figure"
+msgstr "minha-figura"
+
+#: src/inserts.rs
+msgid "Here"
+msgstr "Aqui"
+
+#: src/inserts.rs
+msgid "Top of the page"
+msgstr "Topo da página"
+
+#: src/inserts.rs
+msgid "Automatic"
+msgstr "Automática"
+
+#: src/inserts.rs
+msgid "Width"
+msgstr "Largura"
+
+#: src/inserts.rs
+msgid "No image in the project yet. Pick one from the computer."
+msgstr "Nenhuma imagem no projeto ainda. Escolha uma do computador."
+
+#: src/inserts.rs
+msgid "Pick an image"
+msgstr "Escolha uma imagem"
+
+#: src/inserts.rs
+msgid "Figure 1: {caption}"
+msgstr "Figura 1: {caption}"
+
+#: src/app/actions.rs
+msgid "Could not copy the image: {e}"
+msgstr "Não foi possível copiar a imagem: {e}"
+
+#: src/inserts.rs
+msgid "Images from outside the project are copied to **{folder}/**. The caption takes LaTeX."
+msgstr "Imagens de fora do projeto são copiadas para **{folder}/**. A legenda aceita LaTeX."
+
+#: src/app/actions.rs
+msgid "Section"
+msgstr "Seção"
+
+#: src/app/actions.rs
+msgid "Add images to the project…"
+msgstr "Adicionar imagens ao projeto…"
+
+#: src/app/actions.rs
+msgid "Choose one or more images to add to the project"
+msgstr "Escolha uma ou mais imagens para adicionar ao projeto"
+
+#: src/app/sidebar.rs
+msgid "Add images…"
+msgstr "Adicionar imagens…"
+
+#: src/dialogs.rs
+msgid "Where what you add to a project goes. The sidebar still lists every file of each kind, wherever it is."
+msgstr "Onde fica o que você adiciona a um projeto. A barra lateral continua listando todos os arquivos de cada tipo, estejam onde estiverem."
+
+#: src/dialogs.rs
+msgid "Back to {folder}"
+msgstr "Voltar para {folder}"
+
+#: src/dialogs.rs
+msgid "{why} Using {folder}/ meanwhile."
+msgstr "{why} Usando {folder}/ enquanto isso."
+
+#: src/settings.rs
+msgid "PDF versions"
+msgstr "Versões do PDF"
+
+#: src/settings.rs
+msgid "Must be a folder inside the project, not an absolute path."
+msgstr "Precisa ser uma pasta dentro do projeto, não um caminho absoluto."
+
+#: src/settings.rs
+msgid "Must be a folder inside the project."
+msgstr "Precisa ser uma pasta dentro do projeto."
+
+#: src/settings.rs
+msgid "Type a folder name."
+msgstr "Digite o nome de uma pasta."
+
+#: src/settings.rs
+msgid "Hidden folders (starting with a dot) are not allowed."
+msgstr "Pastas ocultas (começando com ponto) não são permitidas."
+
+#: src/settings.rs
+msgid "Contains characters not allowed in folder names."
+msgstr "Contém caracteres não permitidos em nomes de pasta."
+
+#: src/app/actions.rs
+msgid "{n} image added."
+msgid_plural "{n} images added."
+msgstr[0] "{n} imagem adicionada."
+msgstr[1] "{n} imagens adicionadas."
+
+#: citações
+msgid "Another entry has the same DOI or a very similar title."
+msgstr "Outra entrada tem o mesmo DOI ou um título muito parecido."
+
+#: citações
+msgid "Author"
+msgstr "Autor"
+
+#: citações
+msgid "Authors"
+msgstr "Autores"
+
+#: citações
+msgid "Book"
+msgstr "Livro"
+
+#: citações
+msgid "Cite"
+msgstr "Citar"
+
+#: citações
+msgid "Cite at the cursor"
+msgstr "Citar no cursor"
+
+#: citações
+msgid "Cite: search by title, author or key…"
+msgstr "Citar: busque por título, autor ou chave…"
+
+#: citações
+msgid "Click to cite at the cursor"
+msgstr "Clique para citar no cursor"
+
+#: citações
+msgid "Click to cite at the cursor. Drag to change the order in the .bib."
+msgstr "Clique para citar no cursor. Arraste para mudar a ordem no .bib."
+
+#: citações
+msgid "Conference paper"
+msgstr "Artigo em evento"
+
+#: citações
+msgid "Could not change {file}: {e}"
+msgstr "Não foi possível alterar {file}: {e}"
+
+#: citações
+msgid "DOI (optional)"
+msgstr "DOI (opcional)"
+
+#: citações
+msgid "DOI, ISBN or arXiv"
+msgstr "DOI, ISBN ou arXiv"
+
+#: citações
+msgid "Dissertation"
+msgstr "Dissertação"
+
+#: citações
+msgid "File order"
+msgstr "Ordem do arquivo"
+
+#: citações
+msgid "Fill in by hand"
+msgstr "Preencher à mão"
+
+#: citações
+msgid "Insert citation…"
+msgstr "Inserir citação…"
+
+#: citações
+msgid "Journal article"
+msgstr "Artigo de periódico"
+
+#: citações
+msgid "Look up and add"
+msgstr "Buscar e adicionar"
+
+#: citações
+msgid "Move down"
+msgstr "Mover para baixo"
+
+#: citações
+msgid "Move up"
+msgstr "Mover para cima"
+
+#: citações
+msgid "New reference"
+msgstr "Nova referência"
+
+#: citações
+msgid "New reference…"
+msgstr "Nova referência…"
+
+#: citações
+msgid "No reference found."
+msgstr "Nenhuma referência encontrada."
+
+#: citações
+msgid "No reference yet. Add one by its DOI, ISBN or arXiv ID, or fill it in by hand."
+msgstr "Nenhuma referência ainda. Adicione uma pelo DOI, ISBN ou arXiv, ou preencha à mão."
+
+#: citações
+msgid "Not a DOI, ISBN or arXiv ID."
+msgstr "Não é um DOI, ISBN nem arXiv."
+
+#: citações
+msgid "Other"
+msgstr "Outro"
+
+#: citações
+msgid "Remove from the .bib"
+msgstr "Remover do .bib"
+
+#: citações
+msgid "Remove {key}?"
+msgstr "Remover {key}?"
+
+#: citações
+msgid "Remove…"
+msgstr "Remover…"
+
+#: citações
+msgid "Save {file} first: it has unsaved changes."
+msgstr "Salve {file} antes: há alterações não salvas."
+
+#: citações
+msgid "Search references"
+msgstr "Buscar referências"
+
+#: citações
+msgid "Show in {file}"
+msgstr "Mostrar em {file}"
+
+#: citações
+msgid "Show only the references the text does not cite"
+msgstr "Mostrar só as referências que o texto não cita"
+
+#: citações
+msgid "Surname, Name and Surname, Name"
+msgstr "Sobrenome, Nome and Sobrenome, Nome"
+
+#: citações
+msgid "Technical report"
+msgstr "Relatório técnico"
+
+#: citações
+msgid "The entry is deleted from {name}."
+msgstr "A entrada será apagada de {name}."
+
+#: citações
+msgid "The entry is deleted from {name}. The text still cites it: those citations will show as \"?\" in the PDF."
+msgstr "A entrada será apagada de {name}. O texto ainda a cita: essas citações vão aparecer como \"?\" no PDF."
+
+#: citações
+msgid "The project has no reference yet: add one to cite it."
+msgstr "O projeto ainda não tem referências: adicione uma para citá-la."
+
+#: citações
+msgid "The rest is filled in from the internet."
+msgstr "O resto é preenchido pela internet."
+
+#: citações
+msgid "Thesis"
+msgstr "Tese"
+
+#: citações
+msgid "Title"
+msgstr "Título"
+
+#: citações
+msgid "Website"
+msgstr "Site"
+
+#: citações
+msgid "and"
+msgstr "e"
+
+#: citações
+msgid "{key} is no longer in the file"
+msgstr "{key} não está mais no arquivo"
+
+#: citações
+msgid "{key} removed."
+msgstr "{key} removida."
+
+#: citações
+msgid "{name} recognized. Title, authors and year come from the internet."
+msgstr "{name} reconhecido. Título, autores e ano vêm da internet."
+
+#: src/app/sidebar.rs
+msgid "{n} not cited"
+msgid_plural "{n} not cited"
+msgstr[0] "{n} não citada"
+msgstr[1] "{n} não citadas"
+
+#: src/app/sidebar.rs
+msgid "{n} reference"
+msgid_plural "{n} references"
+msgstr[0] "{n} referência"
+msgstr[1] "{n} referências"
+
+#: citações
+msgid "Not cited in the text yet"
+msgstr "Ainda não citada no texto"
+
+#: citações
+msgid "Order: {order}"
+msgstr "Ordem: {order}"
+
+#: paleta
+msgid "Nothing found. Try fewer letters."
+msgstr "Nada encontrado. Tente menos letras."
+
+#: paleta
+msgid "Search commands, files, sections, references…"
+msgstr "Buscar comandos, arquivos, seções, referências…"
+
+#: paleta
+msgid "Commands"
+msgstr "Comandos"
+
+#: paleta
+msgid "to close"
+msgstr "fechar"
+
+#: paleta
+msgid "to move"
+msgstr "navegar"
+
+#: paleta
+msgid "to run"
+msgstr "executar"
+
+#: paleta
+msgid "{name}: off"
+msgstr "{name}: desligado"
+
+#: paleta
+msgid "{name}: on"
+msgstr "{name}: ligado"
+
+#: barra lateral
+msgid "Main file: the one compiled into the preview"
+msgstr "Arquivo principal: o que é compilado no preview"
+
+#: interface
+msgid "Add images… (copied to {folder}/)"
+msgstr "Adicionar imagens… (copiadas para {folder}/)"
+
+#: interface
+msgid "Clear the list"
+msgstr "Limpar a lista"
+
+#: interface
+msgid "Clear the recent projects"
+msgstr "Limpar os projetos recentes"
+
+#: interface
+msgid "Copy LaTeX's message"
+msgstr "Copiar a mensagem do LaTeX"
+
+#: interface
+msgid "Delete the image"
+msgstr "Apagar a imagem"
+
+#: interface
+msgid "Delete…"
+msgstr "Apagar…"
+
+#: interface
+msgid "Name"
+msgstr "Nome"
+
+#: interface
+msgid "No image found."
+msgstr "Nenhuma imagem encontrada."
+
+#: interface
+msgid "No image in the project yet. Add some, paste one with Ctrl+Alt+I, or drag a file onto the window."
+msgstr "Nenhuma imagem no projeto ainda. Adicione, cole uma com Ctrl+Alt+I ou arraste um arquivo para a janela."
+
+#: interface
+msgid "Recent projects cleared. No folder was touched."
+msgstr "Lista de projetos recentes limpa. Nenhuma pasta foi alterada."
+
+#: interface
+msgid "Remove from the recent projects"
+msgstr "Remover dos projetos recentes"
+
+#: interface
+msgid "Remove {name} from the recent projects"
+msgstr "Remover {name} dos projetos recentes"
+
+#: interface
+msgid "Search images"
+msgstr "Buscar imagens"
+
+#: interface
+msgid "Show only the images the text does not use"
+msgstr "Mostrar só as imagens que o texto não usa"
+
+#: interface
+msgid "The image will be deleted from the disk. This cannot be undone."
+msgstr "A imagem será apagada do disco. Isso não pode ser desfeito."
+
+#: interface
+msgid "Use"
+msgstr "Uso"
+
+#: interface
+msgid "not used"
+msgstr "não usada"
+
+#: interface
+msgid "{name} removed from the recent projects. The folder is untouched."
+msgstr "{name} saiu dos projetos recentes. A pasta continua onde estava."
+
+#: imagens
+msgid "The image will be deleted from the disk. This cannot be undone. The text uses it in {n} place, which will no longer compile."
+msgid_plural "The image will be deleted from the disk. This cannot be undone. The text uses it in {n} places, which will no longer compile."
+msgstr[0] "A imagem será apagada do disco. Isso não pode ser desfeito. O texto a usa em {n} lugar, que deixará de compilar."
+msgstr[1] "A imagem será apagada do disco. Isso não pode ser desfeito. O texto a usa em {n} lugares, que deixarão de compilar."
+
+#: imagens
+msgid "{n} image"
+msgid_plural "{n} images"
+msgstr[0] "{n} imagem"
+msgstr[1] "{n} imagens"
+
+#: imagens
+msgid "{n} not used"
+msgid_plural "{n} not used"
+msgstr[0] "{n} não usada"
+msgstr[1] "{n} não usadas"
+
+#: tema
+msgid "Accent colour"
+msgstr "Cor de destaque"
+
+#: tema
+msgid "Blue"
+msgstr "Azul"
+
+#: tema
+msgid "Green"
+msgstr "Verde"
+
+#: tema
+msgid "Orange"
+msgstr "Laranja"
+
+#: tema
+msgid "Pink"
+msgstr "Rosa"
+
+#: tema
+msgid "Purple"
+msgstr "Roxo"
+
+#: tema
+msgid "Red"
+msgstr "Vermelho"
+
+#: tema
+msgid "Slate"
+msgstr "Ardósia"
+
+#: tema
+msgid "Teal"
+msgstr "Verde-azulado"
+
+#: tema
+msgid "Terracotta"
+msgstr "Terracota"
+
+#: tema
+msgid "Yellow"
+msgstr "Amarelo"
+
+#: tema
+msgid "The system does not say its accent colour: the app's own is used."
+msgstr "O sistema não informa a cor de destaque: o app usa a dele."
+
+#: tema
+msgid "Uses the colour chosen in the system settings (Appearance), and follows it when it changes."
+msgstr "Usa a cor escolhida nas configurações do sistema (Aparência) e acompanha quando ela muda."
+
+#: matemática
+msgid "Arrows"
+msgstr "Setas"
+
+#: matemática
+msgid "Edit formula"
+msgstr "Editar fórmula"
+
+#: matemática
+msgid "Formula"
+msgstr "Fórmula"
+
+#: matemática
+msgid "Formula… (Ctrl+M)"
+msgstr "Fórmula… (Ctrl+M)"
+
+#: matemática
+msgid "Greek"
+msgstr "Gregas"
+
+#: matemática
+msgid "In the sentence"
+msgstr "Na frase"
+
+#: matemática
+msgid "Insert formula"
+msgstr "Inserir fórmula"
+
+#: matemática
+msgid "Insert formula…"
+msgstr "Inserir fórmula…"
+
+#: matemática
+msgid "Numbered"
+msgstr "Numerada"
+
+#: matemática
+msgid "On its own line"
+msgstr "Em linha própria"
+
+#: matemática
+msgid "Open a .tex file to insert the formula."
+msgstr "Abra um arquivo .tex para inserir a fórmula."
+
+#: matemática
+msgid "Operators"
+msgstr "Operadores"
+
+#: matemática
+msgid "Relations"
+msgstr "Relações"
+
+#: matemática
+msgid "Structures"
+msgstr "Estruturas"
+
+#: matemática
+msgid "Type LaTeX, or click the symbols. **Ctrl+Enter** inserts."
+msgstr "Digite em LaTeX ou clique nos símbolos. **Ctrl+Enter** insere."
+
+#: matemática
+msgid "Where"
+msgstr "Onde"
+
+#: matemática
+msgid "e.g. energy"
+msgstr "ex.: energia"
+
+#: preferências
+msgid "Appearance"
+msgstr "Aparência"
+
+#: preferências
+msgid "Automatic compilation"
+msgstr "Compilação automática"
+
+#: preferências
+msgid "Checks"
+msgstr "Verificações"
+
+#: preferências
+msgid "Colour"
+msgstr "Cor"
+
+#: preferências
+msgid "Compilation"
+msgstr "Compilação"
+
+#: preferências
+msgid "Compiles by itself after a pause in typing."
+msgstr "Compila sozinho depois de uma pausa na digitação."
+
+#: preferências
+msgid "Delay"
+msgstr "Atraso"
+
+#: preferências
+msgid "Dictionary"
+msgstr "Dicionário"
+
+#: preferências
+msgid "Distribution"
+msgstr "Distribuição"
+
+#: preferências
+msgid "Engine"
+msgstr "Motor"
+
+#: preferências
+msgid "Fit whole pages"
+msgstr "Ajustar páginas inteiras"
+
+#: preferências
+msgid "General"
+msgstr "Geral"
+
+#: preferências
+msgid "Instead of fitting the page width."
+msgstr "Em vez de ajustar à largura da página."
+
+#: preferências
+msgid "Interface"
+msgstr "Interface"
+
+#: preferências
+msgid "Layout"
+msgstr "Layout"
+
+#: preferências
+msgid "Leading buttons, the cursor, selections and what is active."
+msgstr "Botões principais, o cursor, seleções e o que está ativo."
+
+#: preferências
+msgid "Lines wrap at a comfortable length instead of at the window's edge."
+msgstr "As linhas quebram num comprimento confortável em vez de na borda da janela."
+
+#: preferências
+msgid "Monospaced lines up markup and tables; proportional reads more easily in long prose."
+msgstr "Monoespaçada alinha marcação e tabelas; proporcional é mais fácil de ler em textos longos."
+
+#: preferências
+msgid "No settings found"
+msgstr "Nenhuma configuração encontrada"
+
+#: preferências
+msgid "Of the menus, dialogs and messages."
+msgstr "Dos menus, diálogos e mensagens."
+
+#: preferências
+msgid "Placement"
+msgstr "Posicionamento"
+
+#: preferências
+msgid "Project folders"
+msgstr "Pastas do projeto"
+
+#: preferências
+msgid "Reset this page to the defaults"
+msgstr "Restaurar o padrão desta página"
+
+#: preferências
+msgid "Scrolls the preview to the cursor's position as it moves."
+msgstr "Rola o preview até a posição do cursor conforme ele se move."
+
+#: preferências
+msgid "Search settings"
+msgstr "Buscar configurações"
+
+#: preferências
+msgid "Shows the pages with inverted, warm-tinted colours."
+msgstr "Mostra as páginas com cores invertidas e tom quente."
+
+#: preferências
+msgid "Spelling"
+msgstr "Ortografia"
+
+#: preferências
+msgid "Suggestions"
+msgstr "Sugestões"
+
+#: preferências
+msgid "The line being written stays in the middle of the screen."
+msgstr "A linha sendo escrita fica no meio da tela."
+
+#: preferências
+msgid "Translation"
+msgstr "Tradução"
+
+#: preferências
+msgid "Try other words."
+msgstr "Tente outras palavras."
+
+#: preferências
+msgid "Typeface"
+msgstr "Tipo de fonte"
+
+#: preferências
+msgid "Underlines misspelled words, in the document's own language."
+msgstr "Sublinha palavras com erro de grafia, no idioma do próprio documento."
+
+#: preferências
+msgid "Underlines small, certain mistakes in the prose (repeated words, spacing, quotes), each with its fix."
+msgstr "Sublinha pequenos erros certos no texto (palavras repetidas, espaçamento, aspas), cada um com sua correção."
+
+#: preferências
+msgid "Where the PDF sits next to the editor."
+msgstr "Onde o PDF fica em relação ao editor."
+
+#: preferências
+msgid "Writing"
+msgstr "Escrita"
+
+#: preferências
+msgid "Zoom"
+msgstr "Zoom"
+
+#: tela inicial
+msgid "Write LaTeX and see the PDF take shape as you type."
+msgstr "Escreva LaTeX e veja o PDF tomar forma enquanto digita."
+
+#: tela inicial
+msgid "A project is a folder: your .tex files, the bibliography and the images, side by side."
+msgstr "Um projeto é uma pasta: seus arquivos .tex, a bibliografia e as imagens, lado a lado."
+
+#: tela inicial
+msgid "Start a new project"
+msgstr "Comece um projeto novo"
+
+#: tela inicial
+msgid "ABNT academic work"
+msgstr "Trabalho acadêmico ABNT"
+
+#: tela inicial
+msgid "TCC, dissertation or thesis by the Brazilian standards"
+msgstr "TCC, dissertação ou tese nas normas da ABNT"
+
+#: tela inicial
+msgid "A paper or a short text with sections"
+msgstr "Um artigo ou texto curto com seções"
+
+#: tela inicial
+msgid "Report or thesis"
+msgstr "Relatório ou tese"
+
+#: tela inicial
+msgid "A long text divided into chapters"
+msgstr "Um texto longo dividido em capítulos"
+
+#: tela inicial
+msgid "Presentation"
+msgstr "Apresentação"
+
+#: tela inicial
+msgid "Slides for a talk, with beamer"
+msgstr "Slides para uma palestra, com beamer"
+
+#: tela inicial
+msgid "Or continue a project you already have"
+msgstr "Ou continue um projeto que você já tem"
+
+#: tela inicial
+msgid "Open folder…"
+msgstr "Abrir pasta…"
+
+#: tela inicial
+msgid "You can also drop the folder, or one of its .tex files, on this window."
+msgstr "Você também pode arrastar a pasta, ou um dos arquivos .tex dela, para esta janela."
+
+#: tour
+msgid "The project"
+msgstr "O projeto"
+
+#: tour
+msgid "Files, sections, references and images. The bar on the left switches between them."
+msgstr "Arquivos, seções, referências e imagens. A barra à esquerda alterna entre eles."
+
+#: tour
+msgid "The editor"
+msgstr "O editor"
+
+#: tour
+msgid "Write here. The toolbar above inserts sections, lists, tables, images and formulas."
+msgstr "Escreva aqui. A barra de ferramentas acima insere seções, listas, tabelas, imagens e fórmulas."
+
+#: tour
+msgid "The preview"
+msgstr "O preview"
+
+#: tour
+msgid "The PDF compiles by itself when you pause typing. Errors show up below the editor."
+msgstr "O PDF compila sozinho quando você pausa a digitação. Os erros aparecem abaixo do editor."
+
+#: tour
+msgid "Every command"
+msgstr "Todos os comandos"
+
+#: tour
+msgid "Ctrl+Shift+P opens the command palette: type what you want to do."
+msgstr "Ctrl+Shift+P abre a paleta de comandos: digite o que você quer fazer."
+
+#: tour
+msgid "Done"
+msgstr "Concluir"
+
+#: tour
+msgid "Skip"
+msgstr "Pular"
+
+#: tour
+msgid "Show the tour"
+msgstr "Mostrar o tour"

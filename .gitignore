@@ -1,0 +1,17 @@
+/target
+
+# Saídas do LaTeX em projetos de teste
+*.aux
+*.log
+*.out
+*.toc
+*.pdf
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# IDE e binário compilado solto na raiz
+.idea/
+/tectec
+/dist
+/build

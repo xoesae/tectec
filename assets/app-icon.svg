@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E3876A"/>
+      <stop offset="1" stop-color="#C45E3E"/>
+    </linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFAF6"/>
+      <stop offset="1" stop-color="#F6E6DA"/>
+    </linearGradient>
+    <path id="t" d="M0 0H84V34Q80 18 64 16H53V98Q53 105 67 106V112H17V106Q31 105 31 98V16H20Q4 18 0 34Z"/>
+  </defs>
+  <rect x="16" y="16" width="224" height="224" rx="50" fill="url(#bg)"/>
+  <rect x="16.5" y="16.5" width="223" height="223" rx="49.5" fill="none" stroke="#fff" stroke-opacity=".18"/>
+  <!-- Keycap: shadow, skirt, top face -->
+  <rect x="48" y="56" width="160" height="160" rx="30" fill="#3B1D12" fill-opacity=".25"/>
+  <rect x="48" y="46" width="160" height="160" rx="30" fill="#DCC3B2"/>
+  <rect x="62" y="52" width="132" height="128" rx="22" fill="url(#top)"/>
+  <use href="#t" fill="#C45E3E" transform="translate(94 66) scale(.8)"/>
+</svg>

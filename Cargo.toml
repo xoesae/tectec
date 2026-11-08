@@ -1,0 +1,73 @@
+[package]
+name = "tectec"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.98"
+description = "Editor de LaTeX nativo: árvore de arquivos, editor e preview do PDF com SyncTeX"
+
+[dependencies]
+eframe = { version = "0.36", default-features = false, features = ["accesskit", "default_fonts", "glow", "wayland", "x11", "persistence"] }
+egui = "0.36"
+egui_extras = { version = "0.36", features = ["image", "file", "svg"] }
+resvg = { version = "0.45", default-features = false }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "gif", "webp", "bmp"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+regex = "1"
+flate2 = "1"
+notify = "8"
+rfd = "0.17"
+ureq = "3"
+roxmltree = "0.21"
+spellbook = "0.4"
+arboard = "3"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+unicode-normalization = "0.1"
+log = "0.4"
+# fastframe (https://fastframe.dev): the desktop's text rendering, Inter with
+# installed fonts for other scripts, the log file and panic log, the English
+# and Portuguese catalogs, the SVG icon set and the tray. Not on crates.io yet;
+# move the tag deliberately, the same one for every crate.
+fastframe-text = { git = "https://github.com/crmne/fastframe", tag = "v0.2.0" }
+fastframe-fonts = { git = "https://github.com/crmne/fastframe", tag = "v0.2.0" }
+fastframe-log = { git = "https://github.com/crmne/fastframe", tag = "v0.2.0" }
+fastframe-i18n = { git = "https://github.com/crmne/fastframe", tag = "v0.2.0" }
+fastframe-icons = { git = "https://github.com/crmne/fastframe", tag = "v0.2.0" }
+fastframe-tray = { git = "https://github.com/crmne/fastframe", tag = "v0.2.0" }
+# The built-in LaTeX (backend/embedded.rs): XeTeX, BibTeX and xdvipdfmx,
+# with TeX Live's files fetched from Tectonic's bundle and cached.
+tectonic = { version = "0.17", default-features = false, features = ["geturl-reqwest", "native-tls-vendored"] }
+tectonic_bundles = "0.4"
+tectonic_io_base = "0.6"
+tectonic_errors = "0.3"
+tectonic_bridge_core = "0.5"
+hayro = "0.7"
+hayro-interpret = "0.7"
+kurbo = "0.13"
+
+[build-dependencies]
+# Compiles assets/i18n/*.po into the binary; the PO parser stays out of it.
+fastframe-i18n = { git = "https://github.com/crmne/fastframe", tag = "v0.2.0", features = ["build"] }
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+opt-level = 3
+# A smaller, faster binary: optimized across crates, in one unit, without
+# debug symbols (the panic log still records where a panic happened).
+lto = "fat"
+codegen-units = 1
+strip = true
+
+# Release speed with the debug hooks (app/debug.rs) on, to measure the UI:
+# `cargo build --profile profiling`.
+[profile.profiling]
+inherits = "release"
+debug-assertions = true
+lto = false
+codegen-units = 16
+strip = false
