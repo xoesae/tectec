@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=TecTec
+GenericName=LaTeX Editor
+GenericName[pt_BR]=Editor de LaTeX
+Comment=Write LaTeX with the PDF beside it
+Comment[pt_BR]=Escreva em LaTeX com o PDF ao lado
+Exec=tectec %F
+Icon=tectec
+Terminal=false
+Categories=Office;Publishing;TextEditor;
+MimeType=text/x-tex;
+StartupWMClass=tectec

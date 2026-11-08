@@ -1,0 +1,113 @@
+# Builds and publishes a release: `goreleaser release --clean` on a tag
+# (CI does it: .github/workflows/release.yml), or locally without
+# publishing: `goreleaser release --snapshot --clean` (output in dist/).
+#
+# Linux x86_64 only for now. The built-in LaTeX (Tectonic) links system
+# libraries, so the executable is built natively (`cargo build`, not
+# cross-compiled), on the oldest distribution it should run on. What ships
+# beside it (the LaTeX package seed, the ICU libraries) is made by
+# scripts/release-assets.sh after the build.
+version: 2
+
+project_name: tectec
+
+builds:
+  - id: tectec
+    builder: rust
+    binary: tectec
+    tool: cargo
+    command: build
+    targets:
+      - x86_64-unknown-linux-gnu
+    flags:
+      - --release
+    hooks:
+      post:
+        - scripts/release-assets.sh "{{ .Path }}"
+
+archives:
+  - id: tectec
+    formats: [tar.xz]
+    name_template: "{{ .ProjectName }}-{{ .Version }}-linux-x86_64"
+    wrap_in_directory: true
+    files:
+      - src: build/tex-seed
+        dst: tex-seed
+      - src: build/lib/*
+        dst: lib
+        strip_parent: true
+      - src: packaging/tectec.desktop
+        dst: tectec.desktop
+      - src: assets/app-icon.svg
+        dst: tectec.svg
+      - src: packaging/install.sh
+        dst: install.sh
+      - README.md
+
+nfpms:
+  - id: tectec
+    package_name: tectec
+    file_name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Arch }}"
+    vendor: Carlos Jr
+    maintainer: Carlos Jr
+    description: |-
+      LaTeX editor with the PDF beside it and the LaTeX built in.
+      Writes, previews and checks LaTeX documents (theses, articles, ABNT
+      academic work) with no TeX installation needed.
+    section: editors
+    formats: [deb, rpm]
+    bindir: /usr/bin
+    contents:
+      - src: build/tex-seed
+        dst: /usr/share/tectec/tex-seed
+        type: tree
+      - src: build/lib/
+        dst: /usr/lib/tectec
+        type: tree
+      - src: packaging/tectec.desktop
+        dst: /usr/share/applications/tectec.desktop
+      - src: assets/app-icon.svg
+        dst: /usr/share/icons/hicolor/scalable/apps/tectec.svg
+    overrides:
+      deb:
+        dependencies:
+          - libfontconfig1
+          - libfreetype6
+          - libgraphite2-3
+          - libpng16-16
+          - zlib1g
+          - libstdc++6
+          - libxkbcommon0
+          - libwayland-client0
+          - libegl1
+      rpm:
+        dependencies:
+          - fontconfig
+          - freetype
+          - graphite2
+          - libpng
+          - zlib
+          - libstdc++
+          - libxkbcommon
+          - libwayland-client
+          - libglvnd-egl
+
+checksum:
+  name_template: checksums.txt
+  algorithm: sha256
+
+changelog:
+  sort: asc
+  use: git
+  filters:
+    exclude:
+      - "^chore"
+      - "^docs"
+      - "^test"
+
+# The GitHub repository comes from the git remote.
+release:
+  draft: true
+  footer: |
+    **Install:** download `{{ .ProjectName }}-{{ .Version }}-linux-x86_64.tar.xz`, extract it and run `./install.sh`
+    (installs in `~/.local`, no root), or install the `.deb` / `.rpm`.

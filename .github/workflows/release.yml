@@ -1,0 +1,48 @@
+# A tag v1.2.3 makes a GitHub release (a draft, to review before publishing)
+# with the Linux archive, .deb, .rpm and checksums. See .goreleaser.yaml.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    # The oldest Ubuntu the release runs on: the executable links the glibc
+    # it is built against, and newer distributions accept an older one.
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the changelog reads the history
+
+      - name: System libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pkg-config libicu-dev libgraphite2-dev libfontconfig1-dev \
+            libfreetype-dev libpng-dev zlib1g-dev libxkbcommon-dev libwayland-dev libgl1-mesa-dev
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      # The LaTeX packages shipped with the app, downloaded by the app itself
+      # (scripts/release-assets.sh): made again only when what decides them
+      # changes.
+      - name: LaTeX package seed
+        uses: actions/cache@v4
+        with:
+          path: build/tex-seed
+          key: tex-seed-${{ hashFiles('Cargo.lock', 'src/backend/embedded.rs', 'src/backend/templates.rs') }}
+
+      - uses: goreleaser/goreleaser-action@v6
+        with:
+          distribution: goreleaser
+          version: "~> v2"
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
