@@ -120,8 +120,9 @@ fn open_bundle(cache: &Path, only_cached: bool) -> Result<Box<dyn Bundle>, Strin
 
 /// The bundle, read from the cache first: the network is only tried for a
 /// file the cache lacks, and after it fails once, not again in the same
-/// compilation. (Tectonic alone retries every missing file three times,
-/// which offline adds up to minutes.)
+/// compilation; the next one opens the online bundle afresh. (Tectonic
+/// alone retries every missing file three times, which offline adds up to
+/// minutes.)
 struct CacheFirst {
     cached: Box<dyn Bundle>,
     online: Option<Box<dyn Bundle>>,
@@ -153,6 +154,9 @@ impl IoProvider for CacheFirst {
         match self.online.as_mut().unwrap().input_open_name(name, status) {
             OpenResult::Err(e) => {
                 log::warn!("TeX file {name} could not be downloaded: {e}");
+                // Opened again next time: one made while offline stays broken
+                // after the connection comes back.
+                self.online = None;
                 self.offline = true;
                 OpenResult::NotAvailable
             }
