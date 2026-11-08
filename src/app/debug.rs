@@ -7,7 +7,8 @@
 //! keys in angle brackets: `<Enter>`, `<Tab>`, `<S-Tab>`, `<BS>`, `<Esc>`,
 //! `<Up>`, `<Down>`, `<Left>`, `<Right>`, `<End>`, `<Home>`, `<C-Space>`,
 //! `<C-/>`, `<C-.>`, `<F7>`, `<A-Up>`, `<A-Down>`, `<C-S-D>`, `<C-Z>`, `<F12>`, `<wait>`, and
-//! `<Mx,y>` to move the pointer, `<Dx,y>`/`<Ux,y>` to press/release it, and
+//! `<Mx,y>` to move the pointer, `<Dx,y>`/`<Ux,y>` to press/release it, `<Rx,y>`
+//! to right-click, and
 //! `<WS>`, `<W-40>`, `<WE>` for a touchpad scroll gesture (`<WX40>` moves
 //! sideways: positive is fingers to the right).
 //! `TECTEC_DROP=path` hovers that file over the window once typing is
@@ -80,7 +81,15 @@ fn key_event(token: &str) -> Vec<egui::Event> {
             }
         }
     }
-    // <Mx,y> moves the pointer; <Dx,y>/<Ux,y> press/release the primary button there.
+    // <Mx,y> moves the pointer; <Dx,y>/<Ux,y> press/release the primary button there;
+    // <Rx,y> clicks the secondary one (a context menu).
+    if let Some((x, y)) = inner.strip_prefix('R').and_then(|r| r.split_once(',')) {
+        if let (Ok(x), Ok(y)) = (x.parse::<f32>(), y.parse::<f32>()) {
+            let pos = egui::pos2(x, y);
+            let button = |pressed| egui::Event::PointerButton { pos, button: egui::PointerButton::Secondary, pressed, modifiers: Default::default() };
+            return vec![egui::Event::PointerMoved(pos), button(true), button(false)];
+        }
+    }
     for (tag, press) in [('M', None), ('D', Some(true)), ('U', Some(false))] {
         if let Some((x, y)) = inner.strip_prefix(tag).and_then(|r| r.split_once(',')) {
             if let (Ok(x), Ok(y)) = (x.parse::<f32>(), y.parse::<f32>()) {

@@ -879,7 +879,7 @@ impl App {
             ui.vertical_centered(|ui| {
                 let first_run = self.s.recent.is_empty();
                 ui.add_space((ui.available_height() * if first_run { 0.08 } else { 0.12 }).max(24.0));
-                icons::show(ui, Icon::FileCode, theme::accent(), 44.0);
+                ui.add(egui::Image::from_bytes("bytes://tectec-app-icon.svg", crate::tray::APP_ICON).fit_to_exact_size(egui::vec2(72.0, 72.0)));
                 ui.add_space(6.0);
                 ui.label(RichText::new("TecTec").size(26.0).strong());
                 if first_run {

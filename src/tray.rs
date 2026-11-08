@@ -5,7 +5,7 @@ use crate::i18n::t;
 use fastframe_tray::{Config, MenuItem, Tray};
 
 /// The icon, drawn from `assets/app-icon.svg` at whatever size is asked.
-const APP_ICON: &[u8] = include_bytes!("../assets/app-icon.svg");
+pub const APP_ICON: &[u8] = include_bytes!("../assets/app-icon.svg");
 
 /// `None` where the desktop has no tray (GNOME without the AppIndicator
 /// extension, say).
